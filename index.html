@@ -1,1 +1,4213 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caputo - Authentic Italian Cuisine with Egyptian Flair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience Caputo's unique fusion of Italian culinary traditions with Egyptian innovation in Alexandria">
+  
+  <!-- Performance optimizations - preconnect to external domains -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  
+  <!-- Preload critical fonts to reduce critical path -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v30/JTUSjIg1_i6t8kCHKm459Wlhyw.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v39/nuFiD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qC0s.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Load resources with optimized critical path -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font loading optimization to reduce critical path -->
+  <script>
+    // Optimize font loading to reduce critical path latency
+    if ('fonts' in document) {
+      Promise.all([
+        document.fonts.load('300 16px Montserrat'),
+        document.fonts.load('400 16px Montserrat'),
+        document.fonts.load('600 16px Montserrat'),
+        document.fonts.load('400 16px "Playfair Display"'),
+        document.fonts.load('700 16px "Playfair Display"')
+      ]).then(function() {
+        document.documentElement.classList.add('fonts-loaded');
+      }).catch(function() {
+        // Fallback if font loading fails
+        console.log('Font loading optimized');
+      });
+    }
+  </script>
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="logo.png">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dfvma94gg/image/upload/f_auto,q_auto/v1752768954/first_xg9ebu.webp">
+  <style>
+    /* Critical CSS to reduce dependency on external resources */
+    :root {
+      --primary-dark: #705d3f;    /* Dark earthy brown */
+      --primary-medium: #889776;  /* Olive green */
+      --primary-light: #E4E1DA;   /* Creamy white */
+      --secondary-1: #B4B897;     /* Grayish olive */
+      --secondary-2: #CCAC85;     /* Warm beige */
+      --secondary-3: #E3D2BE;     /* Light beige */
+    }
+    
+    /* Critical styles for above-the-fold content */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--primary-light);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    /* Essential layout styles to reduce critical path */
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .flex { display: flex; }
+    .hidden { display: none; }
+    .text-center { text-align: center; }
+    .font-bold { font-weight: 700; }
+    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .max-w-7xl { max-width: 80rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .object-cover { object-fit: cover; }
+    .object-center { object-position: center; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    
+    /* Responsive utilities */
+    @media (min-width: 768px) {
+      .md\\:block { display: block; }
+      .md\\:hidden { display: none; }
+      .md\\:flex { display: flex; }
+      .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .md\\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--primary-light);
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url('pattern.webp') repeat;
+      /* opacity: 0.12; */
+      pointer-events: none;
+    }
+    
+    html {
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(112, 93, 63, 0.7), rgba(112, 93, 63, 0.7)), 
+                  url('cup.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 60vh;
+    }
+    
+    .menu-category {
+      transition: all 0.3s ease;
+      border: 2px solid var(--primary-medium);
+    }
+    
+    .menu-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-color: var(--primary-dark);
+    }
+    
+    .menu-category-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    /* Fine Dining Card Styles */
+    .fine-dining-card {
+      position: relative;
+      height: 280px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    
+    .fine-dining-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+    }
+    
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .card-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.8s ease;
+      filter: brightness(0.7);
+    }
+    
+    .fine-dining-card:hover .card-image {
+      transform: scale(1.1);
+      filter: brightness(0.8);
+    }
+    
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95) 100%);
+      color: white;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+    
+    .fine-dining-card:hover .card-content {
+      transform: translateY(-8px);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .card-accent {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    
+    .fine-dining-card:hover .card-accent {
+      width: 60px;
+    }
+    
+    .card-description {
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      margin: 0 0 16px 0;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+    
+    .card-arrow {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.4s ease;
+    }
+    
+    .fine-dining-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Mobile Circle Card Styles */
+    .mobile-circle-card {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      margin: 0 auto;
+    }
+    
+    .mobile-circle-card:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .mobile-circle-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .mobile-circle-card-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.6s ease;
+      filter: brightness(0.7);
+    }
+    
+    .mobile-circle-card:hover .mobile-circle-card-image {
+      transform: scale(1.1);
+      filter: brightness(0.8);
+    }
+    
+    .mobile-circle-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95) 100%);
+      color: white;
+      text-align: center;
+      transform: translateY(0);
+      transition: all 0.4s ease;
+    }
+    
+    .mobile-circle-card:hover .mobile-circle-card-content {
+      transform: translateY(-4px);
+    }
+    
+    .mobile-circle-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      line-height: 1.2;
+    }
+    
+    .mobile-circle-card-description {
+      font-size: 0.7rem;
+      color: #e0e0e0;
+      margin: 0;
+      line-height: 1.2;
+      opacity: 0.9;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .mobile-circle-card-arrow {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-circle-card:hover .mobile-circle-card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Fine Dining Dish Card Styles */
+    .fine-dining-dish-card {
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    
+    .fine-dining-dish-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+    
+    .dish-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .dish-card-image {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: transform 0.8s ease;
+    }
+    
+    .fine-dining-dish-card:hover .dish-card-image {
+      transform: scale(1.05);
+    }
+    
+    .dish-card-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    
+    .fine-dining-dish-card:hover .dish-card-image::before {
+      opacity: 1;
+    }
+    
+    .dish-card-content {
+      padding: 28px;
+      position: relative;
+    }
+    
+    .dish-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .dish-card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+      line-height: 1.3;
+      flex: 1;
+      margin-right: 16px;
+    }
+    
+    .dish-card-price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: #1a1a1a;
+      font-weight: 700;
+      min-width: 80px;
+      text-align: center;
+    }
+    
+    .price-amount {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    
+    .price-currency {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+    
+    .dish-card-accent {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+      border-radius: 2px;
+      margin-bottom: 16px;
+      transition: width 0.3s ease;
+    }
+    
+    .fine-dining-dish-card:hover .dish-card-accent {
+      width: 80px;
+    }
+    
+    .dish-card-description {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    
+    .dish-card-options {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    
+    .options-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .options-icon {
+      font-size: 1rem;
+      margin-right: 8px;
+    }
+    
+    .options-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .option-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .option-item:last-child {
+      border-bottom: none;
+    }
+    
+    .option-name {
+      font-size: 0.9rem;
+      color: #444;
+      font-weight: 500;
+    }
+    
+    .option-price {
+      font-size: 0.8rem;
+      color: #d4af37;
+      font-weight: 600;
+    }
+    
+    .dish-card-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .dish-card-badge {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .badge-icon {
+      margin-right: 6px;
+      font-size: 0.9rem;
+    }
+    
+    .badge-text {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Mobile Fine Dining Dish Styles */
+    .mobile-fine-dining-dish {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      transition: all 0.4s ease;
+    }
+    
+    .mobile-fine-dining-dish:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+    }
+    
+    .mobile-dish-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .mobile-dish-content {
+      padding: 20px;
+    }
+    
+    .mobile-dish-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    
+    .mobile-dish-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+      flex: 1;
+      margin-right: 12px;
+      line-height: 1.3;
+    }
+    
+    .mobile-dish-price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: #1a1a1a;
+      font-weight: 700;
+      min-width: 60px;
+    }
+    
+    .mobile-price-amount {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    
+    .mobile-price-currency {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-top: 1px;
+    }
+    
+    .mobile-dish-accent {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+      border-radius: 1px;
+      margin-bottom: 12px;
+    }
+    
+    .mobile-dish-description {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    
+    .mobile-dish-options {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    
+    .mobile-options-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .mobile-options-icon {
+      font-size: 0.9rem;
+      margin-right: 6px;
+    }
+    
+    .mobile-options-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .mobile-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .mobile-option-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .mobile-option-item:last-child {
+      border-bottom: none;
+    }
+    
+    .mobile-option-name {
+      font-size: 0.8rem;
+      color: #444;
+      font-weight: 500;
+    }
+    
+    .mobile-option-price {
+      font-size: 0.75rem;
+      color: #d4af37;
+      font-weight: 600;
+    }
+    
+    .mobile-dish-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .mobile-dish-badge {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .mobile-badge-icon {
+      margin-right: 4px;
+      font-size: 0.8rem;
+    }
+    
+    .mobile-badge-text {
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .dish-card {
+      transition: all 0.3s ease;
+      border-bottom: 3px solid var(--primary-medium);
+    }
+    
+    .dish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .arabic-text {
+      direction: rtl;
+      text-align: right;
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    .price-tag {
+      background-color: var(--primary-dark);
+      color: white;
+    }
+    
+    .story-section {
+      background-color: var(--secondary-3);
+    }
+    
+    .pattern-bg {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgxMTIsIDkzLCA2MywgMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+    }
+    
+    .btn-primary {
+      background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+      color: #1a1a1a;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
+      border: none;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #f4d03f 0%, #d4af37 100%);
+      color: #705d3f;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+    }
+    
+    .btn-outline {
+      border: 2px solid #d4af37;
+      color: #d4af37;
+      background: transparent;
+      font-weight: 700;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    
+    .btn-outline:hover {
+      background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+      color: #1a1a1a;
+      border-color: #f4d03f;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
+    }
+    
+    /* Custom animations */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Hero Slider Styles */
+    .hero-slide {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.6s ease-in-out;
+    }
+    
+    .hero-slide:first-child {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .hero-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .hero-slide.prev {
+      transform: translateX(-100%);
+    }
+    
+    .hero-slide.next {
+      transform: translateX(100%);
+    }
+    
+    /* Desktop Circle Menu Styles */
+    .desktop-circle-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    .desktop-circle-card {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .desktop-circle-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+    
+    .desktop-circle-inner {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+    
+    .desktop-circle-card:hover .desktop-circle-inner {
+      transform: scale(1.1);
+    }
+    
+    .desktop-circle-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95) 100%);
+      color: white;
+      padding: 1.5rem;
+      transform: translateY(0);
+      transition: all 0.4s ease;
+    }
+    
+    .desktop-circle-card:hover .desktop-circle-overlay {
+      transform: translateY(-5px);
+    }
+    
+    .desktop-circle-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 0.5rem 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .desktop-circle-description {
+      font-size: 0.875rem;
+      color: #e0e0e0;
+      margin: 0;
+      line-height: 1.3;
+      opacity: 0.9;
+    }
+    
+    /* Desktop Subcategory Circle Styles */
+    .desktop-subcategory-circle {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .desktop-subcategory-circle:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+    
+    .desktop-subcategory-inner {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+    
+    .desktop-subcategory-circle:hover .desktop-subcategory-inner {
+      transform: scale(1.1);
+    }
+    
+    .desktop-subcategory-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95) 100%);
+      color: white;
+      padding: 1.25rem;
+      transform: translateY(0);
+      transition: all 0.4s ease;
+    }
+    
+    .desktop-subcategory-circle:hover .desktop-subcategory-overlay {
+      transform: translateY(-5px);
+    }
+    
+    .desktop-subcategory-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .desktop-subcategory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      justify-items: center;
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-category {
+        width: 100%;
+      }
+      
+      .hero-section {
+        min-height: 40vh;
+      }
+      
+      /* Mobile Circle Menu Grid */
+      .mobile-circle-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      
+      .mobile-circle-card {
+        width: 45vw;
+        max-width: 180px;
+        min-width: 120px;
+        height: 45vw;
+        max-height: 180px;
+        min-height: 120px;
+        margin: 0 auto;
+      }
+      
+      /* Mobile Menu Improvements */
+      .mobile-menu-container {
+        padding: 1rem;
+      }
+      
+      .mobile-category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .mobile-category-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .mobile-category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+      
+      .mobile-category-image {
+        height: 120px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      
+      .mobile-category-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        padding: 0.75rem;
+        color: white;
+      }
+      
+      .mobile-category-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      }
+      
+      /* Mobile Menu Items */
+      .mobile-menu-item {
+        background: white;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border: 1px solid #f0f0f0;
+      }
+      
+      .mobile-menu-item-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      
+      .mobile-menu-item-content {
+        padding: 1rem;
+      }
+      
+      .mobile-menu-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+      }
+      
+      .mobile-menu-item-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin: 0;
+        flex: 1;
+        margin-right: 0.5rem;
+      }
+      
+      .mobile-price-tag {
+        background: var(--primary-dark);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      
+      .mobile-menu-item-description {
+        color: #666;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+      }
+      
+      .mobile-options-container {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+      }
+      
+      .mobile-options-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin-bottom: 0.5rem;
+      }
+      
+      .mobile-options-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .mobile-options-list li {
+        padding: 0.25rem 0;
+        font-size: 0.8rem;
+        color: #555;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .mobile-options-list li:last-child {
+        border-bottom: none;
+      }
+      
+      /* Mobile Subcategories */
+      .mobile-subcategory-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .mobile-subcategory-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        aspect-ratio: 1;
+      }
+      
+      .mobile-subcategory-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+      
+      .mobile-subcategory-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      
+      .mobile-subcategory-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        padding: 1rem;
+        color: white;
+        text-align: center;
+      }
+      
+      .mobile-subcategory-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      }
+      
+      /* Mobile Navigation */
+      .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: white;
+        border-bottom: 2px solid var(--primary-medium);
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      
+      .mobile-nav-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin: 0;
+      }
+      
+      .mobile-nav-button {
+        background: var(--primary-dark);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav-button:hover {
+        background: var(--primary-medium);
+        transform: translateY(-1px);
+      }
+      
+      /* Mobile Empty State */
+      .mobile-empty-state {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: #f8f9fa;
+        border-radius: 16px;
+        margin: 2rem 0;
+      }
+      
+      .mobile-empty-icon {
+        font-size: 3rem;
+        color: #ccc;
+        margin-bottom: 1rem;
+      }
+      
+      .mobile-empty-text {
+        color: #666;
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .mobile-circle-menu-grid {
+        gap: 1rem 0.5rem;
+      }
+      .mobile-circle-card {
+        width: 42vw;
+        max-width: 140px;
+        min-width: 90px;
+        height: 42vw;
+        max-height: 140px;
+        min-height: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg relative overflow-hidden" style="background: #fff !important;">
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
+      <div class="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12"></div>
+      <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white rounded-full opacity-50"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 py-3 relative z-10">
+      <div class="flex justify-between items-center">
+        <!-- Logo and Brand Section -->
+        <div class="flex items-center space-x-4">
+          <img src="logo.png" alt="Caputo Logo" class="w-20 h-20 object-contain">
+        </div>
+        
+        <!-- Navigation Actions -->
+        <div class="flex items-center space-x-3">
+          <!-- Language Toggle with improved styling -->
+          <button id="language-toggle" class="relative group">
+            <div class="bg-white border border-black/20 rounded-full px-4 py-2 text-black font-medium transition-all duration-300 hover:bg-white hover:scale-105 active:scale-95">
+              <span class="flex items-center space-x-2">
+                <span class="text-sm">العربية</span>
+                <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </div>
+            <!-- Hover effect -->
+            <div class="absolute inset-0 bg-black/5 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
+          
+          <!-- Contact Info (hidden on mobile) -->
+         
+        
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Animated bottom border -->
+    <div class="h-1 bg-gradient-to-r from-primary-light via-white to-secondary-3 animate-pulse"></div>
+  </nav>
+
+ <!-- Hero Section -->
+<section class="w-full h-[40vh] md:h-[60vh] lg:h-screen relative m-0 p-0" style="min-height:40vh;">
+  <div class="w-full h-full m-0 p-0">
+    <div class="relative w-full h-full m-0 p-0 rounded-none overflow-hidden">
+      <div id="hero-slider" class="w-full h-full relative overflow-hidden m-0 p-0">
+        <img src="https://res.cloudinary.com/dfvma94gg/image/upload/f_auto,q_auto,w_1200/v1752768954/first_xg9ebu.webp" alt="Caputo Cup" class="hero-slide w-full h-full object-cover object-center absolute inset-0 transition-all duration-6000 ease-in-out" loading="eager" fetchpriority="high">
+        <img src="https://res.cloudinary.com/dfvma94gg/image/upload/f_auto,q_auto,w_1200/v1752768953/seconed_wudmiu.webp" alt="Caputo Cup" class="hero-slide w-full h-full object-cover object-center absolute inset-0 transition-all duration-6000 ease-in-out" loading="lazy">
+        <img src="https://res.cloudinary.com/dfvma94gg/image/upload/f_auto,q_auto,w_1200/v1752768954/fourth_tecoti.webp" alt="Caputo Dish" class="hero-slide w-full h-full object-cover object-center absolute inset-0 transition-all duration-6000 ease-in-out" loading="lazy">
+      </div>
+      <!-- Removed hero-title and hero-subtitle for full image slider -->
+    </div>
+  </div>
+</section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-16 bg-white/80">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 id="menu-title" class="text-3xl font-bold text-primary-dark text-center mb-4">Our Menu</h2>
+      <p id="menu-description" class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+        Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience.
+      </p>
+      
+      <!-- Desktop Circle Menu Categories -->
+      <div class="hidden md:block mb-12">
+        <div class="desktop-circle-menu-grid">
+          <!-- Breakfast -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showMenu('breakfast')">
+            <div class="desktop-circle-inner">
+              <img src="breakfast.webp" alt="${translations[currentLanguage].breakfast}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="breakfast-label" class="desktop-circle-title">Breakfast</h3>
+                <p id="breakfast-description" class="desktop-circle-description">Start your day with our exquisite morning selections</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Main Course -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showSubcategories('main-course')">
+            <div class="desktop-circle-inner">
+              <img src="main dish.webp" alt="${translations[currentLanguage]['main-course']}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="main-course-label" class="desktop-circle-title">Main Course</h3>
+                <p id="main-course-description" class="desktop-circle-description">Signature dishes crafted with passion and precision</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pasta -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showSubcategories('pasta')">
+            <div class="desktop-circle-inner">
+              <img src="seafoodPasta.webp" alt="${translations[currentLanguage].pasta}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="pasta-label" class="desktop-circle-title">Pasta</h3>
+                <p id="pasta-description" class="desktop-circle-description">Handcrafted pasta with authentic Italian techniques</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pizza -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showSubcategories('pizza')">
+            <div class="desktop-circle-inner">
+              <img src="pizza.webp" alt="${translations[currentLanguage].pizza}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="pizza-label" class="desktop-circle-title">Pizza</h3>
+                <p id="pizza-description" class="desktop-circle-description">Artisanal pizzas with premium ingredients</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Appetizers -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showMenu('appetizers')">
+            <div class="desktop-circle-inner">
+              <img src="Menu\Appetizers\mixAppet.webp" alt="${translations[currentLanguage].appetizers}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="appetizers-label" class="desktop-circle-title">Appetizers</h3>
+                <p id="appetizers-description" class="desktop-circle-description">Sophisticated starters to awaken your palate</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Salad -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showMenu('salad')">
+            <div class="desktop-circle-inner">
+              <img src="sefoodSalad.webp" alt="${translations[currentLanguage].salad}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="salad-label" class="desktop-circle-title">Salad</h3>
+                <p id="salad-description" class="desktop-circle-description">Fresh, vibrant salads with premium dressings</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Soup -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showMenu('soup')">
+            <div class="desktop-circle-inner">
+              <img src="Menu\Soup\mushroomS.webp" alt="${translations[currentLanguage].soup}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="soup-label" class="desktop-circle-title">Soup</h3>
+                <p id="soup-description" class="desktop-circle-description">Rich, flavorful soups made from scratch</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sandwiches -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showSubcategories('sandwiches')">
+            <div class="desktop-circle-inner">
+              <img src="" alt="${translations[currentLanguage].sandwiches}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="sandwiches-label" class="desktop-circle-title">Sandwiches</h3>
+                <p id="sandwiches-description" class="desktop-circle-description">Gourmet sandwiches with artisanal breads</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Drinks -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showSubcategories('drinks')">
+            <div class="desktop-circle-inner">
+              <img src="" alt="${translations[currentLanguage].drinks}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="drinks-label" class="desktop-circle-title">Drinks</h3>
+                <p id="drinks-description" class="desktop-circle-description">Curated beverages to complement your meal</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Extras -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showMenu('extras')">
+            <div class="desktop-circle-inner">
+              <img src="" alt="${translations[currentLanguage].extras}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="extras-label" class="desktop-circle-title">Extras</h3>
+                <p id="extras-description" class="desktop-circle-description">Premium accompaniments and side dishes</p>
+              </div>
+            </div>
+          </div>
+          <!-- Dessert (new category) -->
+          <div class="desktop-circle-card group cursor-pointer" onclick="showMenu('dessert')">
+            <div class="desktop-circle-inner">
+              <img src="dessert.webp" alt="${translations[currentLanguage].dessert}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              <div class="desktop-circle-overlay">
+                <h3 id="dessert-label" class="desktop-circle-title">Dessert</h3>
+                <p id="dessert-description" class="desktop-circle-description">Sweet treats to finish your meal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Circle Menu Categories -->
+      <div class="md:hidden mb-12">
+        <div class="mobile-circle-menu-grid">
+          <!-- Breakfast -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showMenu('breakfast')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="breakfast.webp" alt="${translations[currentLanguage].breakfast}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-breakfast-label" class="mobile-circle-card-title">Breakfast</h3>
+                <p id="mobile-breakfast-description" class="mobile-circle-card-description">Start your day with our exquisite morning selections</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Main Course -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showSubcategories('main-course')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="main dish.webp" alt="${translations[currentLanguage]['main-course']}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-main-course-label" class="mobile-circle-card-title">Main Course</h3>
+                <p id="mobile-main-course-description" class="mobile-circle-card-description">Signature dishes crafted with passion and precision</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pasta -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showSubcategories('pasta')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="seafoodPasta.webp" alt="${translations[currentLanguage].pasta}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-pasta-label" class="mobile-circle-card-title">Pasta</h3>
+                <p id="mobile-pasta-description" class="mobile-circle-card-description">Handcrafted pasta with authentic Italian techniques</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pizza -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showSubcategories('pizza')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="pizza.webp" alt="${translations[currentLanguage].pizza}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-pizza-label" class="mobile-circle-card-title">Pizza</h3>
+                <p id="mobile-pizza-description" class="mobile-circle-card-description">Artisanal pizzas with premium ingredients</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Appetizers -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showMenu('appetizers')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="Menu\Appetizers\mixAppet.webp" alt="${translations[currentLanguage].appetizers}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-appetizers-label" class="mobile-circle-card-title">Appetizers</h3>
+                <p id="mobile-appetizers-description" class="mobile-circle-card-description">Sophisticated starters to awaken your palate</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Salad -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showMenu('salad')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="sefoodSalad.webp" alt="${translations[currentLanguage].salad}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-salad-label" class="mobile-circle-card-title">Salad</h3>
+                <p id="mobile-salad-description" class="mobile-circle-card-description">Fresh, vibrant salads with premium dressings</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Soup -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showMenu('soup')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="Menu\Soup\mushroomS.webp" alt="${translations[currentLanguage].soup}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-soup-label" class="mobile-circle-card-title">Soup</h3>
+                <p id="mobile-soup-description" class="mobile-circle-card-description">Rich, flavorful soups made from scratch</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sandwiches -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showSubcategories('sandwiches')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="" alt="${translations[currentLanguage].sandwiches}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-sandwiches-label" class="mobile-circle-card-title">Sandwiches</h3>
+                <p id="mobile-sandwiches-description" class="mobile-circle-card-description">Gourmet sandwiches with artisanal breads</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Drinks -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showSubcategories('drinks')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src=""/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-drinks-label" class="mobile-circle-card-title">Drinks</h3>
+                <p id="mobile-drinks-description" class="mobile-circle-card-description">Curated beverages to complement your meal</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Extras -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showMenu('extras')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="" alt="${translations[currentLanguage].extras}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-extras-label" class="mobile-circle-card-title">Extras</h3>
+                <p id="mobile-extras-description" class="mobile-circle-card-description">Premium accompaniments and side dishes</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Dessert (new category) -->
+          <div class="mobile-circle-card group cursor-pointer" onclick="showMenu('dessert')">
+            <div class="mobile-circle-card-inner">
+              <div class="mobile-circle-card-image">
+                <img src="dessert.webp" alt="${translations[currentLanguage].dessert}" loading="lazy" class="w-full h-full object-cover object-center"/>
+              </div>
+              <div class="mobile-circle-card-content">
+                <h3 id="mobile-dessert-label" class="mobile-circle-card-title">Dessert</h3>
+                <p id="mobile-dessert-description" class="mobile-circle-card-description">Sweet treats to finish your meal</p>
+              </div>
+              <div class="mobile-circle-card-arrow">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+          <!-- Subcategories Content Container -->
+      <div id="subcategories-content" class="max-w-7xl mx-auto px-4 py-12 hidden" aria-live="polite"></div>
+      
+      <!-- Menu Content Container -->
+      <div id="menu-content" class="max-w-7xl mx-auto px-4 py-12 hidden" aria-live="polite"></div>
+  </section>
+
+  <!-- Weekly Challenge Section -->
+<section class="py-16 text-primary-dark" style="background: rgba(255,255,255,0.8);">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Caputo's Weekly Challenge</h2>
+    <div class="max-w-3xl mx-auto bg-white rounded-lg p-8 shadow-lg">
+      <h3 id="challenge-title" class="text-2xl font-bold mb-4 text-primary-dark">Try Our Weekly Special</h3>
+      <p id="challenge-description" class="text-gray-700">Each week we feature a new challenge for our customers. Solve it and get a discount on your next visit!</p>
+      <button id="weekly-challenge-btn" class="mt-6 px-6 py-3 btn-primary rounded-lg text-lg">Try Our Weekly Challenge</button>
+    </div>
+  </div>
+
+  <!-- Modal Popup -->
+  <div id="challenge-modal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center relative">
+      <button id="close-challenge-modal" class="absolute top-2 right-2 text-gray-400 hover:text-yellow-600 text-2xl font-bold transition-colors">&times;</button>
+      <h4 id="weekly-challenge-win-title" class="text-2xl font-bold text-primary-dark mb-4">Spin the Wheel!</h4>
+      <div id="spin-wheel-container" class="flex flex-col items-center justify-center mb-4">
+        <div id="svg-wheel-wrapper" style="position:relative; width:220px; height:220px;">
+          <svg id="svg-spin-wheel" width="220" height="220" viewBox="0 0 220 220"></svg>
+          <div id="svg-wheel-pointer" style="position:absolute; left:50%; top:-18px; transform:translateX(-50%); z-index:2;">
+            <svg width="36" height="36" viewBox="0 0 36 36">
+              <polygon points="18,0 28,18 8,18" fill="#e74c3c" stroke="#fff" stroke-width="2"/>
+              <circle cx="18" cy="26" r="6" fill="#fff" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <button id="spin-btn" class="mt-4 px-6 py-2 btn-primary rounded-lg text-lg">Spin</button>
+      </div>
+      <p id="weekly-challenge-win-discount" class="text-lg text-primary-dark font-bold mb-2 hidden"></p>
+      <p id="weekly-challenge-win-note" class="text-sm text-gray-500 hidden">Show this popup to your server to redeem your discount.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12" style="background: rgba(255,255,255,0.8);">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8 text-white">
+      <!-- Restaurant Info -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4 text-black">CAPUTO</h3>
+        <div class="space-y-2">
+          <p class="text-black opacity-90">Tivoli Dome, Alexandria, Egypt</p>
+          
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-span-2 md:col-span-1 md:col-start-3">
+        <h4 class="text-xl font-bold mb-4 text-black">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/CaputoTiv?mibextid=ZbWKwL" class="text-black opacity-90 hover:opacity-100 hover:text-primary-light transition" aria-label="Facebook">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+          </a>
+          <a href="https://www.instagram.com/caputo.25/?igsh=b3BzM2JpMzNrZnI%3D#" class="text-black opacity-90 hover:opacity-100 hover:text-primary-light transition" aria-label="Instagram">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 2.75a5.75 5.75 0 1 1 0 11.5 5.75 5.75 0 0 1 0-11.5zm0 1.5a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zm5.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@caputotiv?_t=ZS-8yR01FKEobQ&_r=1" class="text-black opacity-90 hover:opacity-100 hover:text-primary-light transition" aria-label="TikTok">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-primary-medium mt-8 pt-8 text-center text-black opacity-80">
+      <p>&copy; 2025 Caputo Restaurant. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    // Language management (same as before)
+    let currentLanguage = 'english';
+    const translations = {
+      english: {
+        heroTitle: "Authentic Italian Cuisine with Egyptian Soul",
+        heroSubtitle: "A culinary journey from Alexandria to Naples and back",
+        menuTitle: "Our Menu",
+        menuDescription: "Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience.",
+        challengeTitle: "Try Our Weekly Special",
+        challengeDescription: "Each week we feature a new challenge for our customers. Solve it and get a discount on your next visit!",
+        breakfast: "Breakfast",
+        "main-course": "Main Course",
+        soup: "Soup",
+        salad: "Salad",
+        appetizers: "Appetizers",
+        pasta: "Pasta",
+        pizza: "Pizza",
+        sandwiches: "Sandwiches",
+        extras: "Extras",
+        drinks: "Drinks",
+        "soft-drinks": "Soft Drinks",
+        closeButton: "Close Menu",
+        backButton: "Back to Categories",
+        currency: "L.E",
+        beef: "Beef",
+        chicken: "Chicken",
+        seafood: "Seafood",
+        vegetarian: "Vegetarian",
+        "hot-drinks": "Hot Drinks",
+        "cold-drinks": "Cold Drinks",
+        "main-course-chicken": "Main Course - Chicken",
+        "main-course-beef": "Main Course - Beef", 
+        "main-course-seafood": "Main Course - Seafood",
+        "pasta-beef": "Pasta - Beef",
+        "pasta-chicken": "Pasta - Chicken",
+        "pasta-seafood": "Pasta - Seafood",
+        "pasta-vegetarian": "Pasta - Vegetarian",
+        "pizza-beef": "Pizza - Beef",
+        "pizza-chicken": "Pizza - Chicken",
+        "pizza-fish": "Pizza - Seafood",
+        "pizza-vegetarian": "Pizza - Vegetarian",
+        "sandwiches-chicken": "Sandwiches - Chicken",
+        "sandwiches-beef": "Sandwiches - Beef",
+        "sandwiches-seafood": "Sandwiches - Seafood",
+        "sandwiches-vegetarian": "Sandwiches - Vegetarian",
+        "drinks-hot-drinks": "Drinks - Hot Drinks",
+        "drinks-cold-drinks": "Drinks - Cold Drinks",
+        "drinks-soft-drinks": "Drinks - Soft Drinks",
+        customizations: "Customizations",
+        chooseOption: "Choose Option",
+        chefsSpecial: "Chef's Special",
+        menuItemsComingSoon: "Menu items coming soon",
+        exploreMenu: "Explore Our Menu",
+        ourStory: "Our Story",
+        openDaily: "Open Daily 9AM-11PM",
+        madeWithLove: "Made with Love",
+        authenticItalianCuisine: "Authentic Italian Cuisine",
+        contactPhone: "+20 123 456 789",
+        contactAddress: "Tivoli Dome, Alexandria",
+        breakfastDescription: "Start your day with our exquisite morning selections",
+        mainCourseDescription: "Signature dishes crafted with passion and precision",
+        pastaDescription: "Handcrafted pasta with authentic Italian techniques",
+        pizzaDescription: "Artisanal pizzas with premium ingredients",
+        appetizersDescription: "Sophisticated starters to awaken your palate",
+        saladDescription: "Fresh, vibrant salads with premium dressings",
+        soupDescription: "Rich, flavorful soups made from scratch",
+        sandwichesDescription: "Gourmet sandwiches with artisanal breads",
+        drinksDescription: "Curated beverages to complement your meal",
+        extrasDescription: "Premium accompaniments and side dishes",
+        weeklyChallengeButton: "Try Our Weekly Challenge",
+        weeklyChallengeWinTitle: "You win!",
+        weeklyChallengeWinDiscount: "Discount 20%",
+        weeklyChallengeWinNote: "Show this popup to your server to redeem your discount.",
+        dessert: "Dessert",
+        dessertDescription: "Sweet treats to finish your meal",
+        "specialty-coffee": "Specialty Coffee",
+        "drinks-specialty-coffee": "Specialty Coffee",
+        specialtyCoffeeDescription: "Expertly brewed single-origin coffee selections",
+        iceFruitCoffee: "Ice Fruit Coffee",
+        milkshake: "Milkshake",
+        iceCoffee: "Ice Coffee",
+      },
+      arabic: {
+        heroTitle: "مطبخ إيطالي أصيل بروح مصرية",
+        heroSubtitle: "رحلة طهوية من الإسكندرية إلى نابولي والعودة",
+        menuTitle: "قائمتنا",
+        menuDescription: "اختر من بين قائمة متنوعة تضم مجموعة لذيذة من الأطباق. مهمتنا هي إرضاء رغباتك ورفع مستوى تجربة تناول الطعام الخاصة بك.",
+        challengeTitle: "جرب عرضنا الأسبوعي الخاص",
+        challengeDescription: "كل أسبوع نقدم تحديًا جديدًا لعملائنا. احله واحصل على خصم في زيارتك القادمة!",
+        breakfast: "إفطار",
+        "main-course": "الطبق الرئيسي",
+        soup: "شوربة",
+        salad: "سلطة",
+        appetizers: "مقبلات",
+        pasta: "باستا",
+        pizza: "بيتزا",
+        sandwiches: "ساندويتشات",
+        extras: "إضافات",
+        drinks: "مشروبات",
+        "soft-drinks": "مشروبات غازية",
+        closeButton: "إغلاق القائمة",
+        backButton: "العودة للفئات",
+        currency: "ج.م",
+        beef: "لحم بقري",
+        chicken: "دجاج",
+        seafood: "مأكولات بحرية",
+        vegetarian: "نباتي",
+        "hot-drinks": "مشروبات ساخنة",
+        "cold-drinks": "مشروبات باردة",
+        "main-course-chicken": "الطبق الرئيسي - دجاج",
+        "main-course-beef": "الطبق الرئيسي - لحم بقري", 
+        "main-course-seafood": "الطبق الرئيسي - مأكولات بحرية",
+        "pasta-beef": "باستا - لحم بقري",
+        "pasta-chicken": "باستا - دجاج",
+        "pasta-seafood": "باستا - مأكولات بحرية",
+        "pasta-vegetarian": "باستا - نباتي",
+        "pizza-beef": "بيتزا - لحم بقري",
+        "pizza-chicken": "بيتزا - دجاج",
+        "pizza-fish": "بيتزا - مأكولات بحرية",
+        "pizza-vegetarian": "بيتزا - نباتي",
+        "sandwiches-chicken": "ساندويتشات - دجاج",
+        "sandwiches-beef": "ساندويتشات - لحم بقري",
+        "sandwiches-seafood": "ساندويتشات - مأكولات بحرية",
+        "sandwiches-vegetarian": "ساندويتشات - نباتي",
+        "drinks-hot-drinks": "مشروبات - مشروبات ساخنة",
+        "drinks-cold-drinks": "مشروبات - مشروبات باردة",
+        "drinks-soft-drinks": "مشروبات - مشروبات غازية",
+        customizations: "تخصيصات",
+        chooseOption: "اختر الخيار",
+        chefsSpecial: "طبق الشيف",
+        menuItemsComingSoon: "سيتم إضافة العناصر قريبًا",
+        exploreMenu: "استكشف قائمتنا",
+        ourStory: "قصتنا",
+        openDaily: "مفتوح يومياً 9 صباحاً-11 مساءً",
+        madeWithLove: "مصنوع بحب",
+        authenticItalianCuisine: "مطبخ إيطالي أصيل",
+        contactPhone: "+20 123 456 789",
+        contactAddress: "تيفولي دوم، الإسكندرية",
+        breakfastDescription: "ابدأ يومك مع اختياراتنا الصباحية الرائعة",
+        mainCourseDescription: "أطباق مميزة مصنوعة بالشغف والدقة",
+        pastaDescription: "باستا مصنوعة يدوياً بتقنيات إيطالية أصيلة",
+        pizzaDescription: "بيتزا حرفية بمكونات عالية الجودة",
+        appetizersDescription: "مقبلات متطورة لإيقاظ حاسة التذوق لديك",
+        saladDescription: "سلطات طازجة ونابضة بأصباغ عالية الجودة",
+        soupDescription: "شوربات غنية ونكهات مصنوعة من الصفر",
+        sandwichesDescription: "ساندويتشات فاخرة بخبز حرفي",
+        drinksDescription: "مشروبات منتقاة لتكمل وجبتك",
+        extrasDescription: "إضافات فاخرة وأطباق جانبية",
+        weeklyChallengeButton: "جرب التحدي الأسبوعي",
+        weeklyChallengeWinTitle: "لقد ربحت!",
+        weeklyChallengeWinDiscount: "خصم 20%",
+        weeklyChallengeWinNote: "أظهر هذه النافذة لموظف المطعم للحصول على الخصم.",
+        dessert: "حلويات",
+        dessertDescription: "حلويات لختام وجبتك",
+        "specialty-coffee": "قهوة مختصة",
+        "drinks-specialty-coffee": "قهوة مختصة",
+        specialtyCoffeeDescription: "تشكيلة قهوة مختصة محضرة باحترافية",
+        iceFruitCoffee: "قهوة فواكه مثلجة",
+        milkshake: "ميلك شيك",
+        iceCoffee: "قهوة مثلجة",
+      }
+    };
+
+    const menuItems = {
+      // Breakfast Items
+      breakfast: [
+        {
+          name: "Oriental platter",
+          nameAr: "طبق شرقى",
+          price: "130",
+          desc: "Foul, falafel, hummus, wedges, omelet, cheese w tomato, eggplant, mix salad, fresh bread",
+          descAr: "فول، فلافل، حمص، بطاطس ودجز، بيض أومليت، جبنة مع طماطم، باذنجان، ميكس سلاد، خبز طازج",
+          image: "Menu/Breakfast/ori_lxysgy.webp"
+        },
+        {
+          name: "Full Greek breakfast",
+          nameAr: "جريك بريك فاست",
+          price: "167",
+          desc: "2 eggs omelet, 3 large Hotdog, wedges, grilled buttered toast, Greek yogurt with  nuts & honey, mix salad",
+          descAr: "2 بيض اوميلت . شرائح جبنة فيتا . 3 قطع سوسيس . ويدجز . خبز محمص بالزبدة . ميكس سالاد . زبادي يوناني بالمكسرات والعسل",
+          image: ""
+        },
+        {
+          name: "Intercontinental breakfast",
+          nameAr: "إفطار إنتركونتيننتال",
+          price: "226",
+          desc: "Croissant, mini brownie, buttered toast, honey, butter, jam, cheddar cheese slices (white and red) and Feta, smoked turkey and smoked beef slices",
+          descAr: " كرواسون . ميني براوني . خبز محمص بالزبدة . عسل . زبدة   مربى . شرائح جبنة شيدر ابيض وشيدر احمر وفيتا . شرائح سموك تركي وسموك بيف",
+          image: ""
+        },
+      
+        {
+          name: "Toast",
+          nameAr: "توست",
+          price: "99",
+          desc: "Served with wedges and mix salad",
+          descAr: "يقدم مع بطاطس ودجز وميكس سلاد",
+          image: "",
+          options: [
+            { name: "Feta", nameAr: "جبنة فيتا", price: "99" },
+            { name: "Smoked turkey", nameAr: "رومي مدخن", price: "117" },
+            { name: "Cheddar", nameAr: "شيدر", price: "117" },
+            { name: "Cold cuts", nameAr: "كولد كاتس", price: "127" }
+          ]
+        },
+     
+        {
+          name: "Club sandwich",
+          nameAr: "كلوب ساندويتش",
+          price: "197",
+          desc: "Three layers of toast consisting of omelet, mayo, smoke turkey, chicken, lettuce, tomato served wedges and mix salad",
+          descAr: "ثلاث طبقات من الخبز المحمص تتكون من بيض أومليت، مايونيز، رومي مدخن، دجاج مشوى، خس، طماطم، تُقدم مع قطع ودجز و ميكس سلاد",
+          image: "Menu/Breakfast/clubSandwich.webp"
+        },
+        {
+          name: "Croissant",
+          nameAr: "كرواسون",
+          price: "84",
+          desc: "Served with mix salad",
+          descAr: "يقدم مع ميكس سلاد",
+          image: "",
+          options: [
+            { name: "Mix cheese", nameAr: "ميكس تشيز", price: "130" },
+            { name: "Plain", nameAr: "عادى", price: "84" },
+            { name: "Cold cuts", nameAr: "كولد كاتس", price: "150" },
+            { name: "Chocolate", nameAr: "شوكليت", price: "137" }
+          ]
+        },
+        {
+          name: "Oriental pie",
+          nameAr: "فطيرة شرقية",
+          price: "99",
+          desc: "served with aged cheese and molasses and tahini and tomato cheese",
+          descAr: "تقدم مع جبنة معتقة ودبس وطحينة وجبنة طماطم",
+          image: "",
+          options: [
+            { name: "Whole", nameAr: "كامل", price: "289" },
+            { name: "Half", nameAr: "نصف", price: "161" },
+            { name: "Quarter", nameAr: "ربع", price: "99" }
+          ]
+        },
+        {
+          name: "Eggs",
+          nameAr: "بيض",
+          price: "89",
+          desc: "served with mix salad and wedges",
+          descAr: "يقدم مع ميكس سلاد وبطاطس ودجز",
+          image: "",
+          options: [
+            { name: "Plain", nameAr: "عادى", price: "89" },
+            { name: "Mix Cheese", nameAr: "ميكس تشيز", price: "119" },
+            { name: "Veggie Cheese", nameAr: "فيجى تشيز", price: "123" },
+            { name: "Bacon Cheese", nameAr: "بيف بيكون تشيز", price: "123" },
+            { name: "Pastrami Veg Cheese", nameAr: "بسطرمة تشيز", price: "141" },
+            { name: "Sausage Veg Cheese", nameAr: "سدق تشيز", price: "119" },
+            { name: "Sauces Veg Cheese", nameAr: "سوسيس تشيز", price: "123" }
+          ]
+        }
+      ],
+      "extras-breakfast": [
+        {
+          name: "Foul",
+          nameAr: "فول",
+          price: "45",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Eggs",
+          nameAr: "بيض",
+          price: "40",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Falafel",
+          nameAr: "فلافل",
+          price: "32",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Veggies",
+          nameAr: "خضروات",
+          price: "45",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Butter",
+          nameAr: "زبدة",
+          price: "141",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Fresh Bread",
+          nameAr: "عيش",
+          price: "20",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Special Cover",
+          nameAr: "سبيشال كوفر",
+          price: "99",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Jam",
+          nameAr: "مربى",
+          price: "25",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Mix Cheese",
+          nameAr: "ميكس تشيز",
+          price: "60",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Honey",
+          nameAr: "عسل",
+          price: "30",
+          desc: "",
+          descAr: "",
+          image: ""
+        }
+      ],
+      
+      // Soup Items
+      soup: [
+        {
+          name: "Mushroom creamy soup",
+          nameAr: "شوربة ماشروم كريمي",
+          price: "99",
+          desc: "Blended creamy mushroom soup served with garlic bread",
+          descAr: "شوربة ماشروم كريمي الممزوجة تقدم مع جارليك بريد",
+          image: "Menu/Soup/mushroomS.webp"
+        },
+     
+        {
+          name: "Chicken creamy soup",
+          nameAr: "شوربة تشيكن كريمي",
+          price: "139",
+          desc: "Cream of Chicken Soup is a rich and creamy soup with a smooth texture and a delicious flavor served with garlic bread",
+          descAr: "شوربة تشيكن كريمي، قوامها ناعم ونكهة لذيذة تقدم مع جارليك بريد",
+          image: "Menu/Soup/chickenS.webp"
+        },
+        {
+          name: "Tomato Soup",
+          nameAr: "شوربة طماطم",
+          price: "87",
+          desc: "Delicious tomato soup with basil and cream served with garlic bread",
+          descAr: "شوربة الطماطم لذيذة مع الريحان والكريمة تقدم مع جارليك بريد ",
+          image: "Menu/Soup/tomatoS.webp"
+        },
+        {
+          name: "Chowder soup",
+          nameAr: "شوربة تشاودر",
+          price: "189",
+          desc: "Creamy sea food soup with garlic bread",
+          descAr: "شوربة كريمة المأكولات البحرية مع تقدم مع جارليك بريد",
+          image: ""
+        },
+        {
+          name: "Shrimp soup",
+          nameAr: "شوربة روبيان",
+          price: "177",
+          desc: "Prawn bisque with cream sauce with garlic bread",
+          descAr: "شوربة روبيان مع صلصة الكريمة مع خبز الثوم",
+          image: "Menu/Soup/Shrimp_dhaul4.webp"
+        }
+      ],
+      
+      // Salad Items
+      salad: [
+        {
+          name: "Green Salad",
+          nameAr: "جرين سلاد",
+          price: "89",
+          desc: "Fresh vegetables like lettuce, tomato, arugula, bell peppers, cucumber, onion, vinaigrette dressing",
+          descAr: "خضراوات طازجة مثل الخس، الطماطم، الجرجير، الفلفل الحلو، الخيار، البصل، وتُتبل بصوص فينيجريت الشهي",
+          image: ""
+        },
+        {
+          name: "Greek salad",
+          nameAr: "جريك سلاد",
+          price: "109",
+          desc: "Made with a mix fresh vegetables like lettuce, cucumber, tomato, bell peppers, black olive, feta cheese, onion, vinaigrette dressing",
+          descAr: "مُحضرة من مزيج من الخضراوات الطازجة مثل الخس، الخيار، الطماطم، الفلفل الحلو، الزيتون الأسود، جبنة الفيتا، البصل، وتُتبل بصوص فينيجريت الشهي",
+          image: "Menu/Salad/greeksal_f6jpob.webp"
+        },
+        {
+          name: "Carbine salad chicken",
+          nameAr: "كاربين سلاد تشيكن",
+          price: "239",
+          desc: " Mix lettuce, honey lime dressing, orange, pineapple, dried berries, hazelnut, red pepper, grilled shrimp",
+          descAr: " مزيج من الخس  صوص هاني لايم  برتقال اناناس توت مجفف . بندق . فلفل احمر . جمبري مشوي",
+          image: ""
+        },
+        {
+          name: "Fattoush salad",
+          nameAr: "فاتوش سلاد",
+          price: "123",
+          desc: " Lettuce, tomato, cucumber, carrot, green onion, radish, arugula, bell peppers, crispy tortilla, pomegranate molasses",
+          descAr: "خس . طماطم . خيار . جزر . بصل اخضر . فجل . جرجير ارجولا . فلفل الوان . تورتيلا مقرمشة . دبس الرمان",
+          image: "Menu/Salad/fattoush_xjren0.webp"
+        },
+        {
+          name: "Caesar salad",
+          nameAr: "سيزر سلاد",
+          price: "187",
+          desc: "mix lettuce, Caesar dressing, roasted croutons, parmesan",
+          descAr: "مزيج من الخس، صوص سيزر، قطع خبز محمص، جبنة بارميزان",
+          image: "Menu/Salad/chickenCesarS.webp",
+          options: [
+            { name: "Chicken", nameAr: "دجاج", price: "187" },
+            { name: "Shrimp", nameAr: "روبيان", price: "232" }
+          ]
+        },
+        {
+          name: "Caprese salad",
+          nameAr: "كابريزى سلاد",
+          price: "140",
+          desc: "Mozzarella, basil, arugula, tomato, balsamic, pesto",
+          descAr: "موزاريلا. ريحان، جرجير، طماطم، خل بلسمك، بيستو",
+          image: "Menu/salad/capreseSalad_opmaui.webp"
+        },
+        {
+          name: "Tuna salad",
+          nameAr: "تونة سلاد",
+          price: "179",
+          desc: " Lettuce mix, vegetables, onion, mayo sauce",
+          descAr: "مزيج من الخس والخضروات . بصل . صوص مايو ",
+          image: "Menu/Salad/tunaSalad_w5iztu.webp"
+        },
+        {
+          name: "Avocado shrimp salad",
+          nameAr: "أفوكادو روبيان سلاد",
+          price: "267",
+          desc: " Lettuce mix, vegetables, sweet corn, avocado slices, shrimp",
+          descAr: " مزيج الخس والخضروات . ذرة حلوة . شرائح افوكادو . جمبري ",
+          image: ""
+        },
+        {
+          name: "Burrata salad",
+          nameAr: "بوراتا سلاد",
+          price: "290",
+          desc: "Cherry Tomato, arugula, burrata cheese, balsamic vinegar, basil oil",
+          descAr: " شيرى توماتو، , جرجير ارجولا جبنة بوراتا، خل بلسامك زيت ريحان",
+          image: "Menu/Salad/burratasalad_wwcwsp.webp"
+        },
+        {
+          name:"Carbine Shrimp Salad",
+          nameAr: "سلطة كارباين روبيان", 
+          price: "",
+          desc: "Mix lettuce, honey lime dressing, orange, pineapple, dried berries, hazelnut, red pepper, grilled shrimp",
+          descAr: "مزيج من الخس، صوص هاني لايم، برتقال، أناناس، توت مجفف، بندق، فلفل أحمر، جمبري مشوي",
+          image:""
+        }
+      ],
+      
+      // Appetizer Items
+      appetizers: [
+        {
+          name: "French fries",
+          nameAr: "بطاطس مقلية",
+          price: "47",
+          desc: "Classic french fries",
+          descAr: "بطاطس مقلية كلاسيكية",
+          image: ""
+        },
+        {
+          name: "Cheesy fries",
+          nameAr: "بطاطس مقلية بالتشيز",
+          price: "78",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Texas fries",
+          nameAr: "تيكاس فرايز",
+          price: "139",
+          desc: "French fries, mix cheese, chili meat, jalapeno served ranch sauce",
+          descAr: "فرينش فرايز مغطاة بميكس تشيز، تشيلى ميت، فلفل هالبينو، وتُقدم مع صوص الرانش",
+          image: ""
+        },
+        {
+          name: "Mozzarella ring",
+          nameAr: "موتزاريلا رينجز",
+          price: "132",
+          desc: "Served with marinara",
+          descAr: "تقدم مع صلصة مارينارا",
+          image: ""
+        },
+        
+        {
+          name: "Quesadilla",
+          nameAr: "كساديا",
+          price: "182",
+          desc: "",
+          descAr: "",
+          image: "Menu/Appetizers/qasediay_yth5ci.webp",
+          options: [
+            { name: "Beef", nameAr: "لحم بقري", price: "182" },
+            { name: "Chicken", nameAr: "دجاج", price: "149" },
+            { name: "Shrimp", nameAr: "روبيان", price: "189" }
+          ]
+        },
+        {
+          name: "Chicken wings",
+          nameAr: "أجنحة دجاج",
+          price: "109",
+          desc: "Served by three sauce buffalo and blue cheese, BBQ served a sour cream",
+          descAr: "تقدم بأحد الصوصات: بافلو وجبنة زرقاء، باربيكيو. يُقدم مع كريمة حامضة",
+          image: "",
+          options: [
+            { name: "6 piece", nameAr: "6 قطع", price: "109" },
+            { name: "12 piece", nameAr: "12 قطعة", price: "169" },
+            { name: "24 piece", nameAr: "24 قطعة", price: "299" }
+          ]
+        },
+        {
+          name: "Nachos",
+          nameAr: "ناتشوز",
+          price: "139",
+          desc: "Tortilla corn, queso sauce, mix cheese, jalapeno served with Pico de Gallo and sour cream and lettuce",
+          descAr: "تورتيلا ذرة، صلصة كيسو، ميكس تشيز، هالبينو تقدم مع بيكو دي جالو وساور كريم وخس",
+          image: ""
+        },
+        {
+          name: "Crisp chicken",
+          nameAr: "كريسبى تشيكن",
+          price: "129",
+          desc: "5 Each fried chicken served with honey mustard",
+          descAr: "٥ قطع دجاج مقلي مع هانى ماسترد",
+          image: ""
+        },
+      
+        
+        {
+          name: "Cheese ball",
+          nameAr: "تشيز بولز",
+          price: "120",
+          desc: "Served with tomato sauce",
+          descAr:" تقدم مع صلصه طماطم",
+          image: ""
+        },
+        {
+          name: "Arancini balls",
+          nameAr: "أرانشيني بولز",
+          price: "167",
+          desc: "Italian arancini balls are the perfect combination of crispiness on the outside and rich tenderness on the inside. They are generously stuffed with savory minced meat, seasoned with aromatic spices, and blended with melted mozzarella cheese",
+          descAr: "أرانشيني بولز الإيطالية هي مزيج مثالي من القرمشة الخارجية والطراوة الغنية من الداخل. محشوة باللحم المفروم اللذيذ، متبلة بتوابل عطرية، وممزوجة بجبنة الموزاريلا",
+          image: ""
+        },
+        {
+          name: "Potato Spanish balls",
+          nameAr: "بوتيتو إسبانيش بولز",
+          price: "141",
+          desc: "Mashed Potato Balls stuffed with creamy spinach, hazelnuts, sweet corn, and chicken",
+          descAr: "بوتيتو سبانيش مهروسة محشوة بالسبانخ الكريمي، البندق، الذرة الحلوة، والدجاج",
+          image: ""
+        },
+        {
+          name: "Caputo balls",
+          nameAr: "كابوتو بولز",
+          price: "187",
+          desc: "Cheese ball, arancini stuffed ground meet and cheese, mashed potato ball stuffed Spanich & nuts served with pickled lemon sauce",
+          descAr: "تشيز بولز، أرانشيني محشوة باللحم المفروم والجبن، بوتيتو بولز مهروسة محشوة بالجبنة والسبانخ والمكسرات، تقدم مع صوص الليمون المخلل",
+          image: ""
+        },
+        {
+          name:"sweet heat shrimp",
+          nameAr: "جمبري حار حلو",
+          price: "",
+          desc: "Fried shrimp dish with a mixture of sweet and spicy taste with sweet chili sauce",
+          descAr: "قظع جمبري مقلي بمزيج بين الطعم الحلو و الطعم الحار بصوص االسويت شيلي",
+          image:""
+        } ,
+        {
+          name :"mix appetizers",
+          nameAr: "مكس مقبلات",
+          price: "",
+          desc:" Nachos, chicken ball , barbecue wings , cheese ball, onion ring mozzarella served with thousand island sauce, sweet chili and cheese sauce ",
+          descAr: "  ناتشوز وقطع تشيكن بول باربكيو وينجز و تشيز بول و اونيون رينج موتزريلا تقدم مع صوص ثاوزند ايلاند وسويت شلي و صوص جبنه",
+          image:""
+
+        }
+       
+      ],
+      
+      // Pasta Items (organized by subcategories)
+      "pasta-beef": [
+        { section: "Special Pasta", sectionAr: "باستا مميزة" },
+
+          {
+          name: "tariake manzo",
+          nameAr: "تاريكى مانزو",
+          price: "256",
+          desc:"Fresh homemade ribbon pasta served with tender seared steak slices, tossed in a rich teriyaki sauce that balances sweet and savory flavors with a signature Asian twist. ",
+          descAr: "مكرونة فريش هوم ميد شريط مقدمة مع شرائح لحم مشوي طري، متشوحة في صوص تيرياكي غني يوازن بين النكهات الحلوة والمالحة مع لمسة آسيوية مميزة",
+          image: ""
+
+        },
+
+        { section: "Pasta", sectionAr: "باستا" },
+
+
+       
+        {
+          name: "Alfredo pasta (Beef)",
+          nameAr: "ألفريدو باستا (لحم بقري)",
+          price: "267",
+          desc: "Creamy alfa sauce, fresh mushrooms, parmesan",
+          descAr: "صوص ألفريدو كريمي، فطر طازج، جبنة بارميزان",
+          image: ""
+        },
+        {
+          name: "Spaghetti meat balls",
+          nameAr: "سباجيتى ميت بولز",
+          price: "215",
+          desc: "Minced meat in rich tomato sauce and parmesan",
+          descAr: "لحم مفروم بصوص طماطم غنية وجبنة بارميزان",
+          image: ""
+        },
+        {
+          name: "Steak and mushroom",
+          nameAr: "ستيك ومشروم باستا",
+          price: "319",
+          desc: " Beef fillet strips with mushrooms, beef bouillon and cream sauce. Fettuccine pasta",
+          descAr: "    لحم فيليه شرائح مع مشروم مع بيون اللحمة وصوص الكريمة . مكرونة فيتتوشيني ",
+          image: "Menu/Pasta/Beef/SteakAndMushrooms.webp"
+        }
+      
+       
+      ],
+      "pasta-chicken": [
+
+
+      
+        {
+          name: "Alfredo pasta (Chicken)",
+          nameAr: "ألفريدو باستا (دجاج)",
+          price: "267",
+          desc: "Creamy alfa sauce, fresh mushrooms, parmesan",
+          descAr: "صوص ألفريدو كريمي، فطر طازج، جبنة بارميزان",
+          image: ""
+        },
+        {
+          name: "Pesto pasta",
+          nameAr: "بيستو باستا",
+          price: "285",
+          desc: " Penne pasta with creamy basil pesto sauce, grilled chicken, walnuts, and parmesan cheese and basil oil",
+          descAr: "  مكرونة بنا . صوص ريحان كريمي . دجاج مشوي . عين جمل . جبنة برميزان . زيت ريحان ",
+          image: ""
+        },
+        {
+          name: "Mac and cheese pasta (Grilled chicken)",
+          nameAr: "ماك اند تشيز باستا (جريلد تشيكن)",
+          price: "249",
+          desc: "classic American dish consisting of cooked elbow pasta coated in a rich creamy cheese sauce",
+          descAr: "طبق أمريكي كلاسيكي يتكون من معكرونة مطبوخة مغطاة بصوص جبن كريمي",
+          image: ""
+        },
+        {
+          name: "Parmesan pasta",
+          nameAr: "بارميزان باستا",
+          price: "290",
+          desc: "Duple press chicken fried with creamy parmesan sauce and mushrooms, red pepper",
+          descAr: "دجاج مقلي مزدوج مع جبنة بارميزان كريمية صلصة ومشروم، فلفل أحمر",
+          image: ""
+        },
+        
+ 
+      ],
+      "pasta-seafood": [
+
+        { section: "Special Pasta", sectionAr: "باستا مميزة" },
+         {
+          name: "Tagliatelle mussels pasta",
+          nameAr: "تاجليتلى باستا",
+          price: "298",
+          desc: "Fresh homemade pasta sautéed with tender mussels and baby potatoes, tossed in a rich sauce with coastal flavors that blend simplicity with authentic Italian character",
+          descAr: "مكرونة فريش هوم ميد متشوحة مع بلح بحر وقطع بطاطس صغيرة في صوص غني بنكهة ساحلية مميزة بيجمع بين البساطة والطابع الايطالي",
+          image: ""
+        },
+
+        
+        { section: "Pasta", sectionAr: "باستا" },
+
+        {
+          name: "Alfredo pasta (Shrimp)",
+          nameAr: "ألفريدو باستا (روبيان)",
+          price: "339",
+          desc: "Creamy alfa sauce, fresh mushrooms, parmesan",
+          descAr: "صوص ألفريدو كريمي، فطر طازج، جبنة بارميزان",
+          image: ""
+        },
+        {
+          name: "Spaghetti Sea food",
+          nameAr: "سى فود سباجيتى",
+          price: "367",
+          desc: "Mix sea food, choose your sauce red or white sauce, cherry tomato",
+          descAr: "مأكولات بحرية مشكلة، اختر صلصتك المفضلة (صلصة حمراء أو بيضاء، شيرى توماتو)",
+          image: ""
+        },
+        {
+          name: "Shrimp&chicken lemon",
+          nameAr: "شيرمب أند تشيكن ليمون",
+          price: "307",
+          desc: "Fresh homemade ribbon pasta served with sautéed shrimp and grilled chicken, tossed in a refreshing creamy lemon sauce. A perfect fusion of seafood and poultry in one flavorful dish",
+          descAr: "مكرونة فريش هوم ميد شريط مقدمة مع جمبري وقطع دجاج مشوي متشوحة في صوص ليموني كريمي منعش بنكهة تجمع بين السي فود والدجاج في طبق واحد",
+          image: ""
+        },
+        {
+          name: "pasta salmon",
+          nameAr: " باستا سالمون",
+          price: "",
+          desc: "",
+          descAr: "",
+          image: ""
+        } 
+      ],
+      "pasta-vegetarian": [
+        {
+          name: "Penne arrabbiata",
+          nameAr: "بينى أرابياتا",
+          price: "180",
+          desc: " penna pasta with tomato sauce,mix of vegetables, black olives, chili",
+          descAr: "صوص طماطم . مزيج من الخضروات . زيتون اسود . شيلي ",
+          image: ""
+        },
+        {
+          name: "Ravioli chili formaggie",
+          nameAr: "رافيولي تشيل فورماجي",
+          price: "267",
+          desc: "Fresh homemade pasta stuffed with chili meat, served in a rich and creamy cheese sauce with a subtle touch of chili sauce for a bold yet balanced flavor",
+          descAr: "مكرونة فريش هوم ميد محشوة بلحم شيلي، مقدمة في صوص جبنة كريمي غني، مع لمسة بسيطة من الشيلي صوص تضيف نكهة جريئة ومتوازنة",
+          image: ""
+        },
+        {
+          name: "Sunny veg ravioli",
+          nameAr: "صنى ريفولى خضار",
+          price: "256",
+          desc: "Fresh homemade pasta stuffed with seasonal vegetables, served in a smooth carrot sauce with red kidney beans and aromatic basil oil. A vibrant vegetarian dish full",
+          descAr: "مكرونة فريش هوم ميد محشوة بخضروات طازجة، مقدمة في صوص جزر ناعم، مع فاصوليا حمراء وزيت ريحان عطري يضيف لمسة خفيفة ومنعشة. طبق نباتي غني بالنكهات",
+          image: ""
+        }
+      ],
+      
+      // Pizza Items (organized by subcategories)
+      "pizza-beef": [
+        {
+          name: "Diavola",
+          nameAr: "ديافولا",
+          price: "234",
+          desc: "Tomato sauce, mozzarella cheese, salami",
+          descAr: "صلصة طماطم، جبنة موزاريلا، سلامي",
+          image: "Menu/Pizza/Beef/pizzaDiv_lning7.webp"
+        },
+        {
+          name: "Salsiccia",
+          nameAr: "سالسيشيا",
+          price: "237",
+          desc: "Topped with tomato sauce, mozzarella cheese, bell peppers, sausage",
+          descAr: "مغطاة بصلصة طماطم، جبنة موزاريلا، فلفل رومي، سجق",
+          image: ""
+        }
+      ],
+      "pizza-chicken": [
+        {
+          name: "Ranch",
+          nameAr: "رانش",
+          price: "218",
+          desc: "",
+          descAr: "",
+          image: "Menu/Pizza/Chicken/pizzaRacnh_wyfo91.webp"
+        },
+        {
+          name: "Spanish",
+          nameAr: "إسبانيش",
+          price: "219",
+          desc: "Topped with tomato sauce, mozzarella cheese, chicken grilled or fried, bell peppers, red onion",
+          descAr: "مغطاة بصلصة طماطم، جبنة موزاريلا، دجاج مشوي أو مقلي، فلفل رومي، بصل أحمر",
+          image: ""
+        }
+      ],
+      "pizza-fish": [
+        {
+          name: "Toono",
+          nameAr: "تونو",
+          price: "195",
+          desc: "Tomato sauce, mozzarella cheese, tuna, red onion",
+          descAr: "صلصة طماطم، جبنة موزاريلا، تونة، بصل أحمر",
+          image: ""
+        },
+        {
+          name: "Gamberi",
+          nameAr: "جامبيرى",
+          price: "292",
+          desc: "Topped with tomato sauce, mozzarella cheese, grilled shrimp with touch of parsley",
+          descAr: "مغطاة بصلصة طماطم، جبنة موزاريلا، روبيان مشوي",
+          image: ""
+        },
+        {
+          name: "Frutti di mare",
+          nameAr: "فروتى دي ماري",
+          price: "299",
+          desc: "Topped with tomato sauce, mozzarella cheese, mix of sea food such as calamari, shrimp, and mussels",
+          descAr: "مغطاة بصلصة طماطم، جبنة موزاريلا، مزيج من المأكولات البحرية مثل الكاليماري، الروبيان، وبلح البحر",
+          image: ""
+        }
+      ],
+      "pizza-vegetarian": [
+        {
+          name: "Margherita",
+          nameAr: "مارجريتا",
+          price: "154",
+          desc: "A classic pizza made with fresh tomato sauce, mozzarella cheese, basil leaves and drizzle of olive oil",
+          descAr: "بيتزا كلاسيكية مصنوعة من صلصة الطماطم الطازجة وجبنة الموزاريلا وأوراق الريحان وقليل من زيت الزيتون",
+          image: ""
+        },
+        {
+          name: "Quattro formaggi",
+          nameAr: "كواترو فورماجي",
+          price: "219",
+          desc: "Topped with for kinds of cheese, mozzarella, blue cheese, parmesan, white cheder",
+          descAr: "مغطاة بأنواع الجبن، الموزاريلا، ريكفورد، البارميزان، وايت شيدر",
+          image: ""
+        },
+        {
+          name: "Veggie",
+          nameAr: "فيجي",
+          price: "172",
+          desc: "Topped with tomato sauce, mozzarella cheese, ball peppers, olives, onions, and mushrooms",
+          descAr: "مغطاه بصلصة الطماطم وجبنة الموزاريلا والفلفل الألوان والزيتون والبصل والمشروم",
+          image: ""
+        },
+        {
+          name: "Burrata",
+          nameAr: "بوراتا",
+          price: "289",
+          desc: "A classic pizza made with fresh tomato sauce, mozzarella cheese, basil leaves and drizzle of olive oil",
+          descAr: "مغطاة بصلصة الطماطم، جبنة موزاريلا، جبنة بوراتا كريمية كرات مع أوراق الريحان",
+          image: "Menu/Pizza/Vegetarian/burrata_uepznx.webp"
+        }
+      ],
+      
+      // Sandwich Items
+ // Main Course Subcategories
+'main-course-chicken': [
+  {
+    name: "Montrey chicken",
+    nameAr: "مونتيرى تشيكن",
+    price: "309",
+    desc: "Two chicken breasts covered with a mix cheese, bacon, BBQ and tomato, chives",
+    descAr: "صدران دجاج مغطى بمزيج من الجبن، لحم مقدد، باربكيو، طماطم، بصل أخضر",
+    image: ""
+  },
+  {
+    name:"double H ",
+    nameAr: "دابل إتش",
+    price: "299",
+    desc: "Two chicken breasts, grilled or fried, topped with a mix of cheese",
+    descAr: "صدران دجاج، مشوي أو مقلي، مغطى بمزيج من الجبن، لحم مقدد، صوص رانش، بصل أخضر",
+    image: "Menu/main_course/Chicken/doubleHmaincour_hk0iiv.webp"
+  },
+  {
+    name: "Colorado chicken",
+    nameAr: "كولارادو تشيكن",
+    price: "339",
+    desc: "Three pieces of crispy breaded chicken topped with white sauce, salami slices and melted mozzarella cheese",
+    descAr: "ثلاث قطع دجاج مقرمشة مغطاة بصلصة بيضاء، شرائح سلامي، وجبنة موزاريلا ذائبة",
+    image: ""
+  },
+    {
+    name:"cordon bleu",
+    nameAr: "كوردون بلو",
+    price: "399",
+    desc: "A classic dish featuring a breaded and fried chicken breast stuffed with ham and cheese, served with a side of creamy mushroom sauce",
+    descAr: "طبق كلاسيكي يتكون من صدر دجاج مغطى بالبقسماط ومقلي ومحشو بالل",
+    image:"Menu/main_course/Beef/cordon_blue_s7begy.webp"
+  },
+{
+  name:"chicken curry" ,
+  nameAr: "دجاج كاري",
+  price: "",
+  desc: "A flavorful chicken curry made with tender pieces of chicken simmered in a rich and aromatic curry sauce, served with vegetables and side",
+  descAr: "دجاج كاري لذيذ مصنوع من قطع دجاج طرية مطبوخة في صلصة كاري غنية وعطرية، يقدم مع خضار وسايد اختياري",
+  image: "Menu/main_course/Chicken/chickenCurry.webp"
+
+},
+  {
+    name: "Grilled chicken",
+    nameAr: "جريلد تشيكن",
+    price: "280",
+    desc: "Two chicken breasts choose your sauce",
+    descAr: "صدران دجاج، اختر صلصتك",
+    image: "",
+    options: [
+      { name: "Mushroom sauce", nameAr: "مشروم صوص", price: "" },
+      { name: "Pepper sauce", nameAr: "صوص الفلفل", price: "" },
+      { name: "Blue cheese", nameAr: "بلو تشيز", price: "" },
+      { name: "Lemon sauce", nameAr: "ليمون صوص", price: "" },
+      { name: "Gravy sauce", nameAr: "جرافى صوص", price: "" }
+    ]
+  }
+
+],
+
+'main-course-beef': [
+
+  {
+    name: "Top Fliet steak",
+    nameAr: "توب فيليت ستيك",
+    price: "599",
+    desc: "Is a tender and flavorful cut of beef cooked to highlight its rich taste and texture",
+    descAr: "قطعة لحم بقري طرية ولذيذة تُطهى لإبراز مذاقها وقوامها الغني",
+    image: "Menu/main_course/Beef/topFilet.webp"
+  },
+  {
+    name: "Ribeye steak",
+    nameAr: "ريباى ستيك",
+    price: "557",
+    desc: "Is one of the most tender and flavorful beef cuts, known for its rich marbling",
+    descAr: "من أكثر قطع اللحم البقري طراوةً ونكهةً، تشتهر بتركيبتها الرخامية الغنية",
+    image: ""
+  },
+  {
+    name: "Beef stroganoff",
+    nameAr: "ستروجانوف بيف",
+    price: "423",
+    desc: "A classic Russian dish made with tender beef strips cooked in a rich creamy sauce",
+    descAr: "طبق روسي كلاسيكي مصنوع من شرائح لحم بقري طرية مطبوخة في صلصة كريمية غنية",
+    image: ""
+  }
+],
+
+'main-course-seafood': [
+  {
+    name: "Grilled shrimp",
+    nameAr: "جريلد شريمب",
+    price: "457",
+    desc: "Shrimp marinated in spices, lemon juice, olive oil, then grilled until tender",
+    descAr: "روبيان متبل بالتوابل وعصير الليمون وزيت الزيتون، ثم مشوي حتى يصبح طريًا",
+    image: "Menu/main_course/Seafood/Grilled_Shrimp_ikcvbs.webp"
+  },
+  {
+    name: "Shrimps a la cream",
+    nameAr: "شريمب لاكريمي",
+    price: "489",
+    desc: "Shrimp in cream sauce served with mash potato",
+    descAr: "روبيان بصلصة الكريمة يقدم مع بطاطس مهروسة",
+    image: ""
+  },
+  {
+    name: "Mix sea food grilled",
+    nameAr: "ميكس سى فود جريلد",
+    price: "600",
+    desc: "Selection of seafood including shrimp, mussels, and calamari",
+    descAr: "تشكيلة من المأكولات البحرية تشمل الروبيان وبلح البحر والكاليماري",
+    image: ""
+  },
+  {
+    name:"fish lemon dill",
+    nameAr: "سلمون مشوي",
+    price: "",
+    desc: "Grilled fillet with dill butter lemon sauce served with mash potato",
+    descAr: "قطعه فليه جريلد مع صوص ديل باتر ليمون مع بطاطس مهروسة",
+    image: "Menu/main_course/Seafood/lemonDillFish.webp"
+  },
+  {
+    name:"grilled salmon terriaki",
+    nameAr: "سلمون مشوي ترياكى",
+    price: "",  
+    desc: "Grilled salmon fillet with teriyaki sauce served with vegetables in teriyaki sauce",
+    descAr: "قطعة سلمون مشوي مع صوص ترياكى مع خضار بصوص الترياكي",
+    image: "Menu/main_course/Seafood/teriyakiSalmoon.webp"
+  },
+  {
+    name: "surf and turf",
+    nameAr: "سيرف آند تيرف",
+    price: "",
+    desc: "",
+    descAr: "",
+    image: "Menu/main_course/Seafood/surfAndTurf.webp"
+  }
+],
+
+// Sandwich Subcategories
+'sandwiches-chicken': [
+  {
+    name: "Chicken ranch sand",
+    nameAr: "تشيكن رانش ساندويتش",
+    price: "189",
+    desc: "Fried chicken batty, smoke turkey, ranch sauce, lettuce, tomato cheese sauce",
+    descAr: "قطعة دجاج مقلية، رومي مدخن، صوص رانش، خس، طماطم، صوص تشيز",
+    image: ""
+  },
+  {
+    name: "Buffalo chicken",
+    nameAr: "بافلو تشيكن",
+    price: "189",
+    desc: "Fried chicken batty, coleslaw, pickles, buffalo sauce",
+    descAr: "قطعة دجاج مقلية، سلطة كول سلو، مخلل، صوص بافلو",
+    image: ""
+  },
+  {
+    name: "Classic chicken",
+    nameAr: "كلاسيك تشيكن",
+    price: "172",
+    desc: "",
+    descAr: "",
+    image: "",
+    options: [
+      { name: "Bacon", nameAr: "بيكون", price: "" },
+      { name: "Onion ring", nameAr: "أونيون رينج", price: "" },
+      { name: "Cheese boom", nameAr: "تشيز بووم", price: "" }
+    ]
+  }
+],
+
+'sandwiches-beef': [
+  {
+    name:"classic beef burger",
+    nameAr: "كلاسيك بيف برجر",
+    price: "199",
+    desc: "Beef batty, lettuce, tomato, pickles, cheese sauce",
+    descAr: "قطعة لحم بقري، خس، طماطم، م",
+    image: "Menu/Sandwiches/Beef/classicBurger_tiukx2.webp"
+
+  },
+
+  {
+    name: "Cow boy burger",
+    nameAr: "كاو بوى برجر",
+    price: "256",
+    desc: "Beef batty, onion ring Mozzarella, sausage, Sauce cheese",
+    descAr: "قطعة لحم بقري، حلقات بصل بالموتزاريلا، سوسيس، صوص تشيز",
+    image: ""
+  },
+  {
+    name: "Cheese boom burger",
+    nameAr: "تشيز بوم برجر",
+    price: "232",
+    desc: "Beef batty, fried cheese, Sauce cheese",
+    descAr: "قطعة لحم بقري، فرايد تشيز, صوص تشيز",
+    image: ""
+  },
+  {
+  name :"Philie sandwich",
+  nameAr:"فيلى ساندويتش",
+  price:"238",
+  desc:" Beef fillet strips with mushrooms, onions, bell peppers, and white cheddar cheese ",
+  descAr:"شرائح لحم فليه مشروم , بصل فلفل الوان جبنه شيدر ابيض",
+  image:""
+  }
+],
+
+'sandwiches-seafood': [
+  {
+    name: "Crisp shrimp",
+    nameAr: "كريسب شريمب",
+    price: "223",
+    desc: "Fried shrimp, ranch sauce, bell pepper, cheese sauce",
+    descAr: "روبيان مقلي، صوص رانش، فلفل رومي، صوص جبن",
+    image: ""
+  }
+  
+],
+
+'sandwiches-vegetarian': [
+  // Add vegetarian sandwiches here if available
+],
+      
+      // Extras
+      extras: [
+        {
+          name: "Cheese sauce",
+          nameAr: "تشيز صوص",
+          price: "40",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Mushroom sauce",
+          nameAr: "مشروم صوص",
+          price: "40",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Grilled mushrooms",
+          nameAr: "جريلد مشروم",
+          price: "40",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Shrimp",
+          nameAr: "روبيان",
+          price: "80",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "chicken",
+          nameAr: "دجاج",
+          price: "60",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Beef bacon",
+          nameAr: "لحم بقرى",
+          price: "30",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Bread",
+          nameAr: "خبز",
+          price: "30",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Garlic bread",
+          nameAr: "خبز بالثوم",
+          price: "30",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "sauce",
+          nameAr: "صوص",
+          price: "30",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "white rice",
+          nameAr: "أرز أبيض",
+          price: "47",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Grilled veggies",
+          nameAr: "خضروات مشوية",
+          price: "40",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Hummus",
+          nameAr: "حمص",
+          price: "27",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "cheese",
+          nameAr: "جبن",
+          price: "40",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "mash potato",
+          nameAr: "بطاطس مهروسة",
+          price: "47",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "white or red pasta",
+          nameAr: "باستا ريد او وايت",
+          price: "47",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Beef Burger",
+          nameAr: "بيف برجر",
+          price: "90",
+          desc: "",
+          descAr: "",
+          image: ""
+        }
+      ],
+      
+      // Drinks (organized by subcategories)
+      "drinks-hot-drinks": [
+        { section: "coffee", sectionAr: "قهوة " },
+
+        
+        {
+          name: "Espresso",
+          nameAr: "إسبيريسو",
+          price: "52",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Espresso double",
+          nameAr: "إسبريسو دبل",
+          price: "62",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Espresso Bombon",
+          nameAr: "اسبريسو بومبون",
+          price: "59",
+          desc: "Espresso and condensed milk",
+          descAr: "إسبريسو وحليب مكثف"
+        },
+        {
+          name: "Espresso con panna",
+          nameAr: "إسبريسو كون بانا",
+          price: "66",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Macchiato",
+          nameAr: "ميكاتو",
+          price: "56",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Macchiato double",
+          nameAr: "ميكاتو دوبل",
+          price: "66",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Espresso avocado",
+          nameAr: "إسبريسو أفوكادو",
+          price: "78",
+          desc: "Espresso and ice cream",
+          descAr: "إسبريسو وأيس كريم"
+        },
+        {
+          name: "Cappuccino",
+          nameAr: "كابتشينو",
+          price: "86",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Latte",
+          nameAr: "لاتيه",
+          price: "86",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Spanish latte",
+          nameAr: "سبانيش لاتيه",
+          price: "99",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Tiramisu latte",
+          nameAr: "تراميسيو لاتيه",
+          price: "148",
+          desc: "Tiramisu and milk and espresso",
+          descAr: "تيراميسو وحليب واسبريسو"
+        },
+        {
+          name: "Special latte",
+          nameAr: "سبانيش لاتيه",
+          price: "106",
+          desc: "",
+          descAr: ""
+        },
+      
+        {
+          name: "Cinnamon latte",
+          nameAr: "سينامون لاتيه",
+          price: "99",
+          desc: "",
+          descAr: ""
+        },
+     
+        {
+          name: "Dark mocha",
+          nameAr: "دارك موكا",
+          price: "89",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "White mocha",
+          nameAr: "وايت موكا",
+          price: "99",
+          desc: "",
+          descAr: ""
+        },
+           {
+          name:"salted caramel latte",
+          nameAr: " سولتد كراميل",
+          price: "149",
+          desc: "",
+          descAr: "",
+          image:"Menu/Drinks/hot_drinks/hotsaltedCarmellatte_dfkuhp.webp"
+        },
+      {
+        name:"turkish coffee",
+        nameAr: "قهوة تركى",
+        price: "52",
+        desc: "",
+        descAr: "",
+        image:""
+        
+
+      },
+      {
+         name:"Turkish coffee double",
+         nameAr: "قهوة تركى دبل",
+         price: "63",
+         desc: "",
+         descAr: "",
+         image:""
+      },
+      {
+        name:"hazelnut coffee",
+        nameAr: "قهوة بندق",
+        price: "79",
+        desc: "",
+        descAr: "",
+        image:""
+      },
+      {
+        name:"flat white",
+        nameAr: "فلات وايت",
+        price: "94",
+        desc: "",
+        descAr: "",
+        image:""
+      },
+
+      {
+        name:"cortado",
+        nameAr: "كورتادو",
+        price: "74",
+        desc: "",
+        descAr: "",
+        image:""
+      },
+      {
+        name:"nescafe",
+        nameAr: "نسكافيه",
+        price: "79",
+        desc: "",
+        descAr: "",
+        image:""
+      },
+      {
+        name:"flat mocha",
+        nameAr: "فلات موكا",
+        price: "",
+        desc: "",
+        descAr: "",
+        image:""
+
+      },
+      {
+        name: "Nutella coffee",
+        nameAr: "نوتيلا قهوة",
+        price: "149",
+        desc: "",
+        descAr: "",
+        image:""
+      },
+
+
+        { section: "hot drinks", sectionAr: "   مشروبات ساخنة   " },
+
+        {
+         name:"tea",
+         nameAr: "شاي",
+         price: "51",
+         desc: "",
+         descAr: "",
+         image:""
+        },
+        {
+          name:"herbs",
+          nameAr: "أعشاب",
+          price: "51",
+          desc: "",
+          descAr: "",
+          image:""
+        },
+        {
+          name:"vitamin c",
+          nameAr: "فيتامين سي",
+          price: "69",
+          desc: "",
+          descAr: "",
+          image:""
+        },
+        {
+          name:"mix herbs",
+          nameAr: "مزيج أعشاب",
+          price: "64",
+          desc: "",
+          descAr: "",
+          image:""
+        },
+        {
+          name: "Hot Cider",
+          nameAr: "هوت سيدر",
+          price: "74",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Sahlap",
+          nameAr: "سحلب",
+          price: "85",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Classic hot chocolate",
+          nameAr: "كلاسيك هوت شوكليت",
+          price: "109",
+          desc: "",
+          descAr: "",
+          image:"Menu/Drinks/hot_drinks/classicHotchoclete_gdytc5.webp"
+        },
+      
+        {
+          name: "White hot chocolate",
+          nameAr: "وايت هوت شوكليت",
+          price: "120",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Nutella hot chocolate",
+          nameAr: "نوتيلا هوت شوكليت",
+          price: "149",
+          desc: "",
+          descAr: ""
+        },
+     
+      
+        {
+          name: "Marshmallow hot chocolate",
+          nameAr: "هوت شوكليت مرشيميلو",
+          price: "155",
+          desc: "",
+          descAr: "",
+          image:"Menu/Drinks/hot_drinks/hotchocomarshmello_ifipde.webp"
+        },
+      
+      
+        {
+          name: "Hot kinder",
+          nameAr: "هوت كيندر",
+          price: "149",
+          desc: "",
+          descAr: ""
+        }
+     
+      ],
+      "drinks-cold-drinks": [
+        // Ice Coffee section header
+        { section: "ice-coffee", sectionAr: "قهوة مثلجة" },
+        { name: "Ice latte", nameAr: "أيس لاتيه", price: "98", desc: "", descAr: "" },
+        { name: "Ice mocha", nameAr: "أيس موكا", price: "108", desc: "", descAr: "",image:"Menu/Drinks/cold_drinks/ice_mocha_uz6ipw.webp" },
+        { name: "Ice white mocha", nameAr: "أيس وايت موكا", price: "137", desc: "", descAr: "" },
+        { name: "Ice caramel macchiato", nameAr: "أيس كراميل ميكاتو", price: "118", desc: "", descAr: "",image: "Menu/Drinks/cold_drinks/iceCarmelMacchiato_iozm80.webp"},
+        { name: "Ice americano", nameAr: "أيس أمريكان", price: "109", desc: "", descAr: "" },
+        { name: "Ice cappuccino", nameAr: "أيس كابتشينو", price: "103", desc: "", descAr: "",image:"Menu/Drinks/cold_drinks/ice_cappcino_ejj4pn.webp" },
+        { name: "Ice chocolate", nameAr: "أيس شوكليت", price: "96", desc: "", descAr: "" },
+        { name: "Ice Salted caramel latte", nameAr: "أيس سولتد كراميل", price: "145", desc: "", descAr: "",image:"Menu/Drinks/cold_drinks/ice_salted_carmel_vkmvjn.webp" },
+        { name: "Ice Spanish latte", nameAr: "أيس إسبانيش لاتيه", price: "109", desc: "", descAr: "" },
+        { name: "Ice kinder coffee", nameAr: "أيس كيندر كوفى", price: "124", desc: "", descAr: "" },
+        { name: "Ice Tiramisu latte", nameAr: "أيس لاتيه تراميسيو", price: "145", desc: "", descAr: "",image:"Menu/Drinks/cold_drinks/iceTriamisuLatte_pwsrpk.webp" },
+        { name: "Ice special latte", nameAr: "أيس سبيشيال لاتيه", price: "109", desc: "", descAr: "" },
+        { name: "Wake up Caputo", nameAr: "ويك أب كابوتو", price: "120", desc: "", descAr: "" },
+        // Ice Fruit Coffee section header (now inside Ice Coffee)
+        { section: "ice-fruit-coffee", sectionAr: "قهوة فواكه مثلجة" },
+        { name: "Strawberry latte", nameAr: "لاتيه فراولة", price: "110", desc: "", descAr: "" },
+        { name: "Blue green", nameAr: "بلو جرين", price: "133", desc: "", descAr: "" },
+        { name: "Blue berry coffee", nameAr: "بلو بيرى قهوة", price: "127", desc: "", descAr: "", image:"Menu/Drinks/cold_drinks/iceblueBerry_vsny3z.webp" },
+        { name: "Orange coffee", nameAr: "قهوة برتقال", price: "125", desc: "", descAr: "" ,image:"Menu/Drinks/cold_drinks/ice_orange_coffe_mkjbvl.webp"},
+        { name: "Matcha strawberry", nameAr: "ماتشا فراولة", price: "158", desc: "", descAr: "" },
+        { name: "Matcha mango", nameAr: "ماتشا مانجو", price: "158", desc: "", descAr: "" },
+        { name: "Amrecano coco white", nameAr: "أمريكانو كوكو وايت", price: "125", desc: "", descAr: "" },
+        // Mojito section
+        { section: "mojito", sectionAr: "موهيتو" },
+        { name: "Ice Cider", nameAr: "أيس سيدر", price: "86", desc: "cinnamon cigar, Soda , apple juice", descAr: "سيجار قرفة، صودا، عصير تفاح" ,image:"Menu/Drinks/cold_drinks/ice_sider_panacu.webp" },
+        { name: "Apple eye", nameAr: "أبل أي", price: "89", desc: "apple juice , lemon, soda", descAr: "عصير تفاح، ليمون، صودا" },
+        { name: "Cosmo", nameAr: "كوزمو", price: "143", desc: "redberry , mango , pineapple ,coconut , soda", descAr: "توت أحمر، مانجو، أناناس، جوز هند، صودا",image:"Menu/Drinks/cold_drinks/cosmo_ximtln.webp" },
+        { name: "Berry mango fusion", nameAr: "بيرى مانجو فيجن", price: "135", desc: "Kiwi ,mango, red berry", descAr: "كيوي، مانجو، توت أحمر" },
+        { name: "Devil power", nameAr: "ديفل باور", price: "149", desc: "sweet pepper, black pepper , red bull ,coconut , pineapple", descAr: "فلفل حلو، فلفل أسود، ريد بول، جوز هند، أناناس",image:"Menu/Drinks/cold_drinks/devil_power_e7hfzm.webp" },
+        { name: "Desperados", nameAr: "ديسبرادوس", price: "127", desc: "Mango , blue berry, halal beer", descAr: "مانجو، توت أزرق، بيرة حلال" },
+        { name: "Ice tea peach", nameAr: "أيس تى خوخ", price: "96", desc: "", descAr: "" },
+        { name: "Ice tea strawberry milk", nameAr: "أيس تى ميلك فراولة", price: "143", desc: "", descAr: "" },
+        { name: "Bob Marley", nameAr: "بوب مارلى", price: "127", desc: "Blue cruacao , orange ,soda,cigar ,granden", descAr: "كروساو أزرق، برتقال، صودا، سيجار، جراندين" ,image:"Menu/Drinks/cold_drinks/bobMarley_gu9tyo.webp" },
+        { name: "Tangren", nameAr: "تانجرين", price: "127", desc: "Pineapple ,coconut , blue cruacao , orange", descAr: "أناناس، جوز هند،، برتقال" ,image:"Menu/Drinks/cold_drinks/tan_green_j3gum2.webp"},
+        { name: "Ten cities", nameAr: "تين سيتس", price: "106", desc: "Peach , strawberry ,carrot , soda", descAr: "خوخ، فراولة، جزر، صودا" ,image:"Menu/Drinks/cold_drinks/tan_cites_yr0gmr.webp"},
+        { name: "Carrot city", nameAr: "كاروت سيتى", price: "109", desc: "Carrot , strawberry, orange juice, soda", descAr: "جزر، فراولة، عصير برتقال، صودا" },
+        { name: "Dilemma", nameAr: "دايلما", price: "112", desc: "Apple juice, rosu, soda , granden", descAr: "عصير تفاح، روزو، صودا، جراندين",image:"Menu/Drinks/cold_drinks/delima_plawyw.webp" },
+        { name: "Secret", nameAr: "سيكريت", price: "103", desc: "It's secret ,sorry", descAr: "ده سر، آسف" },
+        { name: "Green blue soda", nameAr: "جرين بلو صودا", price: "101", desc: "Mint , lemon ,soda , Blue cruacao", descAr: "نعناع، ​​ليمون، صودا، بلو كرواساو" },
+        { name: "Chock", nameAr: "تشوك", price: "60", desc: "Lemon , orange juice, soda ,kiwi", descAr: "ليمون، عصير برتقال، صودا، كيوي" ,image:"Menu/Drinks/cold_drinks/chock_vzaxxl.webp"},
+        { name: "Mojito", nameAr: "موهيتو", price: "86", desc: "", descAr: "" },
+        { name: "Mojito flavor", nameAr: "موهيتو فليفر", price: "125", desc: "Passion / blueberry / raspberry /strawberry /peach", descAr: "باشن / توت أزرق / توت بري / فراولة / خوخ",image:"Menu/Drinks/cold_drinks/mokitoBlueberry_s3kzia.webp" },
+        // Boba section
+        { section: "boba", sectionAr: "بوبا" },
+        { name: "Boba coffee", nameAr: "بوبا كوفى", price: "130", desc: "", descAr: "" },
+        { name: "Boba bird", nameAr: "بوبا بيرد", price: "129", desc: "Boba strawberry , bob passion ,boba blue berry pineapple and orange", descAr: "بوبا فراولة، بوب باشن، بوبا توت أزرق وأناناس وبرتقال" },
+        { name: "Boba shake", nameAr: "ميلك شيك بوبا", price: "149", desc: "blue berry or strawberry", descAr: "توت أزرق أو فراولة" },
+        { name: "Boba Passion Fruit", nameAr: "بوبا باشن فروت", price: "119", desc: "", descAr: "" },
+        { name: "Boba mango", nameAr: "بوبا مانجو", price: "129", desc: "", descAr: "" },
+        { name: "Gallow boba", nameAr: "بوبا جالو", price: "139", desc: "Mite ,mango, peach , passion", descAr: "مايت، مانجو، خوخ، باشن" },
+        // Frappuccino section
+        { section: "frappuccino", sectionAr: "فرابوتشينو" },
+        { name: "Classic", nameAr: "كلاسيك", price: "108", desc: "", descAr: "" },
+        { name: "Double coffee", nameAr: "دوبل كوفى", price: "123", desc: "", descAr: "" },
+        { name: "Brownie caramel", nameAr: "براونى كراميل", price: "165", desc: "", descAr: "" },
+        { name: "Dulce de leche", nameAr: "دولشى دى ليتشي", price: "145", desc: "condensed milk, Carmel,milk, cream ,golden sun disc", descAr: "حليب مكثف، كراميل، حليب، كريمة" },
+        { name: "Louts", nameAr: "لوتس", price: "158", desc: "", descAr: "" },
+        { name: "Caramel", nameAr: "كراميل", price: "118", desc: "", descAr: "" },
+        { name: "White mocha", nameAr: "وايت موكا", price: "135", desc: "", descAr: "" },
+        { name: "Mocha", nameAr: "موكا", price: "118", desc: "", descAr: "" },
+        { name: "Oreo", nameAr: "أوريو", price: "123", desc: "", descAr: "" },
+        // Smoothie section
+        { section: "smoothie", sectionAr: "سموزى" },
+        { name: "Mango", nameAr: "مانجو", price: "98", desc: "", descAr: "" },
+        { name: "Blue berry", nameAr: "بلو بيرى", price: "95", desc: "", descAr: "" },
+        { name: "Strawberry", nameAr: "فراولة", price: "96", desc: "", descAr: "" },
+        { name: "Strawberry coconut", nameAr: "فراولة جوز هند", price: "140", desc: "", descAr: "" },
+        { name: "Peach", nameAr: "خوخ", price: "96", desc: "", descAr: "" },
+        { name: "Raspberry lemon", nameAr: "رويسبيرى ليمون", price: "96", desc: "", descAr: "" },
+        { name: "passion", nameAr: "باشن", price: "96", desc: "", descAr: "" },
+        { name: "PPM", nameAr: "خوخ، باشن، مانجو", price: "109", desc: "Peach , passion , mango", descAr: "خوخ، باشن، مانجو" },
+        { name: "Pineapple", nameAr: "أناناس", price: "92", desc: "", descAr: "" },
+        { name: "Mix berry", nameAr: "ميكس بيرى", price: "95", desc: "", descAr: "" },
+        { name: "Mango green", nameAr: "مانجو جرين", price: "102", desc: "Minte , mango", descAr: "نعناع، ​​مانجو" },
+        { name: "Pomegranate molasses", nameAr: "بوميجرانت مولاسيس", price: "140", desc: "Mango , peach , molasses, apple juice, yogurt", descAr: "مانجو، خوخ، دبس، عصير تفاح، زبادي" },
+        { name: "Blue Peach", nameAr: "بلو بيتش", price: "111", desc: "Orange , peach , blue curacao , yogurt", descAr: "برتقال، خوخ، بلو كوراساو ، زبادي" },
+        { name: "Mango White", nameAr: "مانجو وايت", price: "140", desc: "Mango , passion, cream ,coconut milk", descAr: "مانجو، باشن، كريمة، حليب جوز الهند" },
+        { name: "spicy pineapple", nameAr: "سبايسى بينابل", price: "99", desc: "Pineapple and ginger", descAr: "أناناس وزنجبيل" },
+        { name: "Pina Colada", nameAr: "بينا كولادا", price: "140", desc: "", descAr: "" },
+        { name: "Brain Power", nameAr: "برين باور", price: "126", desc: "Mix berry ,banana", descAr: "توت مشكل، موز" },
+        { name: "Lemon mint", nameAr: "ليمون بالنعناع", price: "89", desc: "", descAr: "" },
+        { name: "Blue Hawaii", nameAr: "بلو هاواى", price: "109", desc: "Banana, pineapple, blue curacao", descAr: "موز، أناناس، بلو كوراساو" },
+        { name: "Green Apple", nameAr: "جرين أبل", price: "96", desc: "", descAr: "" },
+        { name: "Watermelon", nameAr: "بطيخ", price: "92", desc: "", descAr: "" },
+        
+        // Milkshake section
+        { section: "milkshake", sectionAr: "ميلك شيك" },
+        { name: "Classic vanilla", nameAr: "فانيليا", price: "109", desc: "", descAr: "" },
+        { name: "Strawberry", nameAr: "فراولة", price: "109", desc: "", descAr: "" },
+        { name: "Mix berry", nameAr: "ميكس بيرى", price: "143", desc: "", descAr: "" },
+        { name: "Irish", nameAr: "إيريش", price: "119", desc: "", descAr: "" },
+        { name: "Caramel", nameAr: "كراميل", price: "119", desc: "", descAr: "" },
+        { name: "Louts", nameAr: "لوتس", price: "145", desc: "", descAr: "" },
+        { name: "Kinder", nameAr: "كيندر", price: "127", desc: "", descAr: "" },
+        { name: "Chocolate", nameAr: "شوكليت", price: "109", desc: "", descAr: "" },
+        { name: "Mango", nameAr: "مانجو", price: "109", desc: "", descAr: "" },
+        { name: "Blueberry", nameAr: "بلو بيرى", price: "132", desc: "", descAr: "" },
+        { name: "Nutella", nameAr: "نوتيلا", price: "145", desc: "", descAr: "" },
+        { name: "Pistachio", nameAr: "بيستاشيو", price: "158", desc: "", descAr: "" },
+        { name: "Oreo", nameAr: "أوريو", price: "143", desc: "", descAr: "" },
+        { name: "Coco coffee", nameAr: "كوكو كوفى", price: "142", desc: "", descAr: "" },
+        { name: "Strawberry coco", nameAr: "كوكو ستروبيرى", price: "134", desc: "", descAr: "" },
+        
+        // Fresh Juice section
+        { section: "fresh-juice", sectionAr: "عصائر طازجة" },
+        { name: "Date", nameAr: "تمر", price: "96", desc: "", descAr: "" },
+        { name: "Guava", nameAr: "جوافة", price: "90", desc: "", descAr: "" },
+        { name: "Strawberry", nameAr: "فراولة", price: "92", desc: "", descAr: "" },
+        { name: "Mango", nameAr: "مانجو", price: "96", desc: "", descAr: "" },
+        { name: "Orange", nameAr: "برتقال", price: "87", desc: "", descAr: "" },
+        { name: "Mandarin", nameAr: "يوسفى", price: "87", desc: "", descAr: "" },
+        { name: "Avocado", nameAr: "أفوكادوا", price: "125", desc: "", descAr: "" },
+        { name: "Lemon", nameAr: "ليمون", price: "80", desc: "", descAr: "" },
+        { name: "Lemon mint", nameAr: "ليمون بالنعناع", price: "84", desc: "", descAr: "" },
+        { name: "Banana", nameAr: "موز", price: "90", desc: "", descAr: "" }
+      ],
+      "drinks-specialty-coffee": [
+        {
+          name: "V60",
+          nameAr: "في ٦٠",
+          price: "120",
+          desc: "",
+          descAr: "",
+          image:"Menu/Drinks/specialty_coffee/hot_v60_b87maw.webp"
+        },
+        {
+          name: "French Press",
+          nameAr: "فرنش بريس",
+          price: "120",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "Cold Brew",
+          nameAr: "كولد برو",
+          price: "169",
+          desc: "",
+          descAr: ""
+        },
+        {
+          name: "chemex",
+          nameAr: "كيميكس",
+          price: "120",
+          desc: "",
+          descAr: ""
+        }
+      ],
+      "drinks-soft-drinks": [
+        {
+          name: "Pepsi",
+          nameAr: "بيبسى",
+          price: "55",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Red bull",
+          nameAr: "ريد بول",
+          price: "90",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Birell",
+          nameAr: "بيرل",
+          price: "58",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Schweppes",
+          nameAr: "شويبس",
+          price: "58",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Water",
+          nameAr: "مياه",
+          price: "30",
+          desc: "",
+          descAr: "",
+          image: ""
+        },
+        {
+          name: "Sparkling water",
+          nameAr: "مياه فوارة",
+          price: "60",
+          desc: "",
+          descAr: "",
+          image: ""
+        }
+      ],
+      dessert: [
+        {
+          name: "Brownies",
+          nameAr: "براونيز",
+          price: "130",
+          desc: "",
+          descAr: "",
+          image:"Menu/Dessert/brownies_v4jhl7.webp"
+        },
+        {
+          name: "San Sebastián",
+          nameAr: "سان سيباستيان",
+          price: "150",
+          desc: "",
+          descAr: "",
+          image:"Menu/Dessert/sabsitine_dded0q.webp"
+        }
+      ]
+    };
+
+
+    const subcategories = {
+      pasta: ["beef", "chicken", "seafood", "vegetarian"],
+      pizza: ["beef", "chicken", "seafood", "vegetarian"],
+      drinks: ["hot-drinks", "cold-drinks", "specialty-coffee", "soft-drinks"],
+      'main-course': ["chicken", "beef", "seafood"],
+      sandwiches: ["chicken", "beef", "seafood", "vegetarian"]
+    };
+
+    function toggleLanguage() {
+  currentLanguage = currentLanguage === 'english' ? 'arabic' : 'english';
+  updateLanguage();
+}
+
+    function updateLanguage() {
+      const lang = translations[currentLanguage];
+
+      // Update UI elements
+      if (document.getElementById('hero-title')) document.getElementById('hero-title').textContent = lang.heroTitle;
+      if (document.getElementById('hero-subtitle')) document.getElementById('hero-subtitle').textContent = lang.heroSubtitle;
+      if (document.getElementById('menu-title')) document.getElementById('menu-title').textContent = lang.menuTitle;
+      if (document.getElementById('menu-description')) document.getElementById('menu-description').textContent = lang.menuDescription;
+      if (document.getElementById('challenge-title')) document.getElementById('challenge-title').textContent = lang.challengeTitle;
+      if (document.getElementById('challenge-description')) document.getElementById('challenge-description').textContent = lang.challengeDescription;
+      if (document.getElementById('brand-tagline')) document.getElementById('brand-tagline').textContent = lang.authenticItalianCuisine;
+      if (document.getElementById('contact-phone')) document.getElementById('contact-phone').textContent = lang.contactPhone;
+      if (document.getElementById('contact-address')) document.getElementById('contact-address').textContent = lang.contactAddress;
+      if (document.getElementById('explore-menu-btn')) document.getElementById('explore-menu-btn').textContent = lang.exploreMenu;
+      if (document.getElementById('our-story-btn')) document.getElementById('our-story-btn').textContent = lang.ourStory;
+      if (document.getElementById('open-daily')) document.getElementById('open-daily').textContent = lang.openDaily;
+      if (document.getElementById('hero-address')) document.getElementById('hero-address').textContent = lang.contactAddress;
+      if (document.getElementById('made-with-love')) document.getElementById('made-with-love').textContent = lang.madeWithLove;
+      if (document.getElementById('breakfast-description')) document.getElementById('breakfast-description').textContent = lang.breakfastDescription;
+      if (document.getElementById('main-course-description')) document.getElementById('main-course-description').textContent = lang.mainCourseDescription;
+      if (document.getElementById('pasta-description')) document.getElementById('pasta-description').textContent = lang.pastaDescription;
+      if (document.getElementById('pizza-description')) document.getElementById('pizza-description').textContent = lang.pizzaDescription;
+      if (document.getElementById('appetizers-description')) document.getElementById('appetizers-description').textContent = lang.appetizersDescription;
+      if (document.getElementById('salad-description')) document.getElementById('salad-description').textContent = lang.saladDescription;
+      if (document.getElementById('soup-description')) document.getElementById('soup-description').textContent = lang.soupDescription;
+      if (document.getElementById('sandwiches-description')) document.getElementById('sandwiches-description').textContent = lang.sandwichesDescription;
+      if (document.getElementById('drinks-description')) document.getElementById('drinks-description').textContent = lang.drinksDescription;
+      if (document.getElementById('extras-description')) document.getElementById('extras-description').textContent = lang.extrasDescription;
+
+      // Update all category labels
+      Object.keys(lang).forEach(key => {
+        if (document.getElementById(`${key}-label`)) document.getElementById(`${key}-label`).textContent = lang[key];
+        if (document.getElementById(`mobile-${key}-label`)) document.getElementById(`mobile-${key}-label`).textContent = lang[key];
+        if (document.getElementById(`mobile-${key}-description`)) document.getElementById(`mobile-${key}-description`).textContent = lang[`${key}Description`];
+        if (document.getElementById(`${key}-description`)) document.getElementById(`${key}-description`).textContent = lang[`${key}Description`];
+      });
+
+      // Update language toggle button
+      const languageToggle = document.getElementById('language-toggle');
+      if (languageToggle) {
+        const toggleText = languageToggle.querySelector('span span');
+        if (toggleText) toggleText.textContent = currentLanguage === 'english' ? 'العربية' : 'English';
+      }
+
+      // Update any open menu content
+      if (document.getElementById('menu-content') && !document.getElementById('menu-content').classList.contains('hidden')) {
+        const category = document.getElementById('menu-content').getAttribute('data-category');
+        if (category) showMenu(category);
+      }
+
+      // Update any open subcategories
+      if (document.getElementById('subcategories-content') && !document.getElementById('subcategories-content').classList.contains('hidden')) {
+        const category = document.getElementById('subcategories-content').getAttribute('data-category');
+        if (category) showSubcategories(category);
+      }
+      if (document.getElementById('weekly-challenge-btn')) document.getElementById('weekly-challenge-btn').textContent = lang.weeklyChallengeButton;
+      if (document.getElementById('weekly-challenge-win-title')) document.getElementById('weekly-challenge-win-title').textContent = lang.weeklyChallengeWinTitle;
+      if (document.getElementById('weekly-challenge-win-discount')) document.getElementById('weekly-challenge-win-discount').textContent = lang.weeklyChallengeWinDiscount;
+      if (document.getElementById('weekly-challenge-win-note')) document.getElementById('weekly-challenge-win-note').textContent = lang.weeklyChallengeWinNote;
+    }
+
+    function showMenu(category) {
+      // Hide subcategories section when showing a menu directly
+      document.getElementById('subcategories-content').classList.add('hidden');
+      
+      // Show menu content
+      const menuContent = document.getElementById('menu-content');
+      menuContent.classList.remove('hidden');
+      menuContent.setAttribute('data-category', category);
+      
+      const lang = translations[currentLanguage];
+      
+      let contentHTML = `
+        <div class="${currentLanguage === 'arabic' ? 'arabic-text' : ''}">
+          <!-- Mobile Navigation Header -->
+          <div class="mobile-nav-header md:hidden">
+            <h3 class="mobile-nav-title">${lang[category]}</h3>
+            <button onclick="closeAllMenus()" class="mobile-nav-button">
+              ${lang.backButton}
+            </button>
+          </div>
+          <!-- Desktop Navigation Header -->
+          <div class="hidden md:flex items-center justify-between mb-8 border-b-2 border-primary-medium pb-4">
+            <h3 class="text-3xl font-bold text-primary-dark">${lang[category]}</h3>
+            <button onclick="closeAllMenus()" class="btn-outline px-6 py-2 rounded-md text-sm">
+              ${lang.backButton}
+            </button>
+          </div>
+
+          <!-- Mobile Menu Items -->
+          <div class="mobile-menu-grid md:hidden">
+            ${menuItems[category] && menuItems[category].length > 0
+              ? menuItems[category].map((item, index) =>
+                  item.section ?
+                    `<div class='font-bold text-lg text-primary-dark border-b border-primary-medium py-2 my-4 text-center menu-item' data-index="${index}">${currentLanguage === 'english' ? lang[item.section] || item.section : lang[item.section] || item.sectionAr}</div>` :
+                    `<div class="mobile-fine-dining-dish menu-item" data-index="${index}" style="opacity: 0; transform: translateY(20px);"> 
+                      <div class="mobile-dish-image">
+                                                 <img src="${item.image || ''}" alt="${currentLanguage === 'english' ? item.name : item.nameAr}" loading="lazy" class="w-full h-full object-cover object-center" decoding="async" onerror="this.style.display='none'"/>
+                      </div>
+                      <div class="mobile-dish-content">
+                        <div class="mobile-dish-header">
+                          <h4 class="mobile-dish-title">${currentLanguage === 'english' ? item.name : item.nameAr}</h4>
+                          <span class="mobile-price-tag">${item.price} EGP</span>
+                        </div>
+                        ${item.desc ? `<p class="mobile-dish-description">${currentLanguage === 'english' ? item.desc : item.descAr}</p>` : ''}
+                        ${item.options ? `
+                          <div class="mobile-options-container">
+                            <div class="mobile-options-title">${lang.chooseOption}:</div>
+                            <div class="mobile-options-grid">
+                              ${item.options.map(option => `
+                                <div class="mobile-option-item">
+                                  <span class="mobile-option-name">${currentLanguage === 'english' ? option.name : option.nameAr}</span>
+                                  <span class="mobile-option-price">${option.price} EGP</span>
+                                </div>
+                              `).join('')}
+                            </div>
+                          </div>
+                        ` : ''}
+                      </div>
+                    </div>`
+                ).join('')
+              : `<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">${lang.menuItemsComingSoon}</p></div>`
+            }
+          </div>
+
+          <!-- Desktop Menu Items -->
+          <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            ${menuItems[category] && menuItems[category].length > 0
+              ? menuItems[category].map((item, index) =>
+                  item.section ?
+                    `<div class='col-span-full font-bold text-2xl text-primary-dark border-b-2 border-primary-medium py-3 my-6 text-center bg-white menu-item' data-index="${index}">${currentLanguage === 'english' ? lang[item.section] || item.section : lang[item.section] || item.sectionAr}</div>` :
+                    `<div class="fine-dining-dish-card menu-item" data-index="${index}" style="opacity: 0; transform: translateY(20px);">
+                      <div class="dish-card-inner">
+                        <div class="dish-card-image">
+                          <img src="${item.image || ''}" alt="${currentLanguage === 'english' ? item.name : item.nameAr}" loading="lazy" class="w-full h-full object-cover object-center" decoding="async" onerror="this.style.display='none'"/>
+                        </div>
+                        <div class="dish-card-content">
+                          <div class="dish-card-header">
+                            <h4 class="dish-card-title">${currentLanguage === 'english' ? item.name : item.nameAr}</h4>
+                            <div class="dish-card-accent"></div>
+                          </div>
+                          ${item.desc ? `<p class="dish-card-description">${currentLanguage === 'english' ? item.desc : item.descAr}</p>` : ''}
+                          <div class="dish-card-price">${item.price} EGP</div>
+                          ${item.options ? `
+                            <div class="dish-card-options">
+                              <div class="options-title">${lang.chooseOption}:</div>
+                              <div class="options-grid">
+                                ${item.options.map(option => `
+                                  <div class="option-item">
+                                    <span class="option-name">${currentLanguage === 'english' ? option.name : option.nameAr}</span>
+                                    <span class="option-price">${option.price} EGP</span>
+                                  </div>
+                                `).join('')}
+                              </div>
+                            </div>
+                          ` : ''}
+                        </div>
+                        <div class="dish-card-arrow">
+                          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>`
+                ).join('')
+              : `<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">${lang.menuItemsComingSoon}</p></div>`
+            }
+          </div>
+        </div>
+      `;
+      menuContent.innerHTML = contentHTML;
+      menuContent.scrollIntoView({ behavior: 'smooth' });
+      
+      // Animate menu items one by one
+      animateMenuItems();
+    }
+
+    // Function to animate menu items one by one
+    function animateMenuItems() {
+      const menuItems = document.querySelectorAll('.menu-item');
+      const delay = 150; // Delay between each item in milliseconds
+      
+      menuItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, index * delay);
+      });
+    }
+
+    // Function to reset menu items animation (for when menu is closed and reopened)
+    function resetMenuItemsAnimation() {
+      const menuItems = document.querySelectorAll('.menu-item');
+      menuItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'none';
+      });
+    }
+
+    function closeAllMenus() {
+      resetMenuItemsAnimation();
+      document.getElementById('menu-content').classList.add('hidden');
+      document.getElementById('subcategories-content').classList.add('hidden');
+    }
+
+    function showSubcategories(category) {
+      // Hide menu content when showing subcategories
+      document.getElementById('menu-content').classList.add('hidden');
+      
+      // Show subcategories above menu content
+      const subcategoriesContent = document.getElementById('subcategories-content');
+      subcategoriesContent.classList.remove('hidden');
+      subcategoriesContent.setAttribute('data-category', category);
+      
+      const lang = translations[currentLanguage];
+      
+      let contentHTML = `
+        <div class="${currentLanguage === 'arabic' ? 'arabic-text' : ''}">
+          <!-- Mobile Navigation Header -->
+          <div class="mobile-nav-header md:hidden">
+            <h3 class="mobile-nav-title">${lang[category]}</h3>
+            <button onclick="closeAllMenus()" class="mobile-nav-button">
+              ${lang.backButton}
+            </button>
+          </div>
+          <!-- Desktop Navigation Header -->
+          <div class="hidden md:flex items-center justify-between mb-8 border-b-2 border-primary-medium pb-4">
+            <h3 class="text-3xl font-bold text-primary-dark">${lang[category]}</h3>
+            <button onclick="closeAllMenus()" class="btn-outline px-6 py-2 rounded-md text-sm">
+              ${lang.backButton}
+            </button>
+          </div>
+
+          <!-- Mobile Subcategories -->
+          <div class="mobile-subcategory-grid md:hidden">
+            ${subcategories[category].map(subcat => `
+              <div class=\"mobile-subcategory-card\">
+                <button onclick=\"showSubcategoryMenu('${category}-${subcat}')\" class=\"mobile-subcategory-image w-full h-full focus:outline-none focus:ring-2 focus:ring-primary-dark\" style=\"background-image: url('${getSubcategoryImage(category, subcat)}');\">
+                  <div class=\"mobile-subcategory-overlay\">
+                    <div class=\"mobile-subcategory-title\">${lang[subcat]}</div>
+                  </div>
+                </button>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Desktop Subcategories -->
+          <div class="hidden md:grid grid-cols-2 md:grid-cols-4 gap-8">
+            ${subcategories[category].map(subcat => `
+              <div class=\"text-center\">
+                <button onclick=\"showSubcategoryMenu('${category}-${subcat}')\" class=\"w-full h-48 rounded-lg overflow-hidden shadow-md mb-4 focus:outline-none focus:ring-2 focus:ring-primary-dark\" style=\"background-image: url('${getSubcategoryImage(category, subcat)}'); background-size: cover; background-position: center;\">
+                  <span class=\"sr-only\">${lang[subcat]}</span>
+                </button>
+                <div class=\"font-bold text-primary-dark\">${lang[subcat]}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+      subcategoriesContent.innerHTML = contentHTML;
+      subcategoriesContent.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function showSubcategoryMenu(category) {
+      // Show menu content but keep subcategories visible
+      const menuContent = document.getElementById('menu-content');
+      menuContent.classList.remove('hidden');
+      menuContent.setAttribute('data-category', category);
+      
+      const lang = translations[currentLanguage];
+      
+      let contentHTML = `
+        <div class="${currentLanguage === 'arabic' ? 'arabic-text' : ''}">
+          <!-- Mobile Menu Items -->
+          <div class="mobile-menu-grid md:hidden">
+            ${menuItems[category] && menuItems[category].length > 0
+              ? menuItems[category].map((item, index) =>
+                  item.section ?
+                    `<div class='font-bold text-lg text-primary-dark border-b border-primary-medium py-2 my-4 text-center menu-item' data-index="${index}">${currentLanguage === 'english' ? lang[item.section] || item.section : lang[item.section] || item.sectionAr}</div>` :
+                    `<div class="mobile-fine-dining-dish menu-item" data-index="${index}" style="opacity: 0; transform: translateY(20px);"> 
+                      <div class="mobile-dish-image">
+                                                 <img src="${item.image || ''}" alt="${currentLanguage === 'english' ? item.name : item.nameAr}" loading="lazy" class="w-full h-full object-cover object-center" decoding="async" onerror="this.style.display='none'"/>
+                      </div>
+                      <div class="mobile-dish-content">
+                        <div class="mobile-dish-header">
+                          <h4 class="mobile-dish-title">${currentLanguage === 'english' ? item.name : item.nameAr}</h4>
+                          <span class="mobile-price-tag">${item.price} EGP</span>
+                        </div>
+                        ${item.desc ? `<p class="mobile-dish-description">${currentLanguage === 'english' ? item.desc : item.descAr}</p>` : ''}
+                        ${item.options ? `
+                          <div class="mobile-options-container">
+                            <div class="mobile-options-title">${lang.chooseOption}:</div>
+                            <div class="mobile-options-grid">
+                              ${item.options.map(option => `
+                                <div class="mobile-option-item">
+                                  <span class="mobile-option-name">${currentLanguage === 'english' ? option.name : option.nameAr}</span>
+                                  <span class="mobile-option-price">${option.price} EGP</span>
+                                </div>
+                              `).join('')}
+                            </div>
+                          </div>
+                        ` : ''}
+                      </div>
+                    </div>`
+                ).join('')
+              : `<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">${lang.menuItemsComingSoon}</p></div>`
+            }
+          </div>
+
+          <!-- Desktop Menu Items -->
+          <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            ${menuItems[category] && menuItems[category].length > 0
+              ? menuItems[category].map((item, index) =>
+                  item.section ?
+                    `<div class='col-span-full text-2xl font-bold text-primary-dark border-b-2 border-primary-medium py-4 mb-6 text-center menu-item' data-index="${index}">${currentLanguage === 'english' ? lang[item.section] || item.section : lang[item.section] || item.sectionAr}</div>` :
+                    `<div class="fine-dining-dish-card menu-item" data-index="${index}" style="opacity: 0; transform: translateY(20px);">
+                      <div class="dish-card-inner">
+                        <div class="dish-card-image">
+                                                     <img src="${item.image || ''}" alt="${currentLanguage === 'english' ? item.name : item.nameAr}" loading="lazy" class="w-full h-full object-cover object-center" decoding="async" onerror="this.style.display='none'"/>
+                        </div>
+                        <div class="dish-card-content">
+                          <div class="dish-card-header">
+                            <h4 class="dish-card-title">${currentLanguage === 'english' ? item.name : item.nameAr}</h4>
+                            <div class="dish-card-price">
+                              <span class="price-amount">${item.price}</span>
+                              <span class="price-currency">EGP</span>
+                            </div>
+                          </div>
+                          <div class="dish-card-accent"></div>
+                          ${item.desc ? `<p class="dish-card-description">${currentLanguage === 'english' ? item.desc : item.descAr}</p>` : ''}
+                          ${item.options ? `
+                            <div class="dish-card-options">
+                              <div class="options-header">
+                                <span class="options-icon">🍽️</span>
+                                <span class="options-title">${lang.customizations}</span>
+                              </div>
+                              <div class="options-list">
+                                ${item.options.map(option => `
+                                  <div class="option-item">
+                                    <span class="option-name">${currentLanguage === 'english' ? option.name : option.nameAr}</span>
+                                    <span class="option-price">${option.price} EGP</span>
+                                  </div>
+                                `).join('')}
+                              </div>
+                            </div>
+                          ` : ''}
+                          <div class="dish-card-footer">
+                            <div class="dish-card-badge">
+                              <span class="badge-icon">⭐</span>
+                              <span class="badge-text">${lang.chefsSpecial}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>`
+                ).join('')
+              : `<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">${lang.menuItemsComingSoon}</p></div>`
+            }
+          </div>
+        </div>
+      `;
+      
+      menuContent.innerHTML = contentHTML;
+      menuContent.scrollIntoView({ behavior: 'smooth' });
+      
+      // Animate menu items
+      setTimeout(() => {
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }, 100);
+    }
+    
+    function getSubcategoryImage(category, subcategory) {
+      const imageMap = {
+        'pasta-beef': 'Menu/Pasta/Beef/SteakAndMushrooms.webp',
+        'pasta-chicken': '',
+        'pasta-fish': 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'pasta-vegetarian': '',
+        'pizza-beef': '',
+        'pizza-chicken': '',
+        'pizza-fish': '',
+        'pizza-vegetarian': '',
+        'drinks-hot-drinks': 'https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'drinks-cold-drinks': 'https://images.unsplash.com/photo-1437418747212-8d9709afab22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'drinks-specialty-coffee': 'Menu/Drinks/specialty_coffee/hot_v60_b87maw.webp',
+        'drinks-soft-drinks': '',
+        'main-course-chicken': 'Menu/main_course/Chicken/chickenCurry.webp',
+        'main-course-beef': 'Menu/main_course/Beef/topFilet.webp',
+        'main-course-seafood': 'Menu/main_course/Seafood/lemonDillFish.webp',
+        'sandwiches-chicken': '',
+        'sandwiches-beef': '',
+        'sandwiches-seafood': '',
+        'sandwiches-vegetarian': ''
+      };
+      return imageMap[`${category}-${subcategory}`] || '';
+    }
+    
+    function closeAllMenus() {
+      resetMenuItemsAnimation();
+      document.getElementById('menu-content').classList.add('hidden');
+      document.getElementById('subcategories-content').classList.add('hidden');
+    }
+    
+    function backToSubcategories() {
+      document.getElementById('menu-content').classList.add('hidden');
+      document.getElementById('subcategories-content').classList.remove('hidden');
+    }
+    
+    function capitalizeFirstLetter(string) {
+      return string.split(' ').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(' ');
+    }
+
+    // Initialize language toggle
+    document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+    
+    // Smooth scrolling function
+    function smoothScrollTo(targetId) {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+      }
+    }
+    
+    // Hero slider functionality
+    function initHeroSlider() {
+      const slides = document.querySelectorAll('.hero-slide');
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      let movingRight = true; // Track direction
+      let isAnimating = false; // Prevent overlapping animations
+      
+      // Initialize slides
+      function initializeSlides() {
+        slides.forEach((slide, index) => {
+          if (index === 0) {
+            slide.style.transform = 'translateX(0)';
+            slide.style.opacity = '1';
+          } else {
+            slide.style.transform = 'translateX(100%)';
+            slide.style.opacity = '0';
+          }
+        });
+      }
+      
+      function nextSlide() {
+        if (isAnimating) return; // Prevent overlapping animations
+        isAnimating = true;
+        
+        const currentSlideElement = slides[currentSlide];
+        const nextSlideIndex = (currentSlide + 1) % totalSlides;
+        const nextSlideElement = slides[nextSlideIndex];
+        
+        // Pre-position next slide
+        if (movingRight) {
+          nextSlideElement.style.transform = 'translateX(-100%)';
+        } else {
+          nextSlideElement.style.transform = 'translateX(100%)';
+        }
+        nextSlideElement.style.opacity = '0';
+        
+        // Small delay to ensure positioning
+        setTimeout(() => {
+          if (movingRight) {
+            // Current slide moves to the right and fades out
+            currentSlideElement.style.transform = 'translateX(100%)';
+            currentSlideElement.style.opacity = '0';
+            
+            // Next slide moves from left to center and fades in
+            nextSlideElement.style.transform = 'translateX(0)';
+            nextSlideElement.style.opacity = '1';
+            
+            // Reset all other slides to the left
+            slides.forEach((slide, index) => {
+              if (index !== currentSlide && index !== nextSlideIndex) {
+                slide.style.transform = 'translateX(-100%)';
+                slide.style.opacity = '0';
+              }
+            });
+          } else {
+            // Current slide moves to the left and fades out
+            currentSlideElement.style.transform = 'translateX(-100%)';
+            currentSlideElement.style.opacity = '0';
+            
+            // Next slide moves from right to center and fades in
+            nextSlideElement.style.transform = 'translateX(0)';
+            nextSlideElement.style.opacity = '1';
+            
+            // Reset all other slides to the right
+            slides.forEach((slide, index) => {
+              if (index !== currentSlide && index !== nextSlideIndex) {
+                slide.style.transform = 'translateX(100%)';
+                slide.style.opacity = '0';
+              }
+            });
+          }
+          
+          // Move to next slide and toggle direction
+          currentSlide = nextSlideIndex;
+          movingRight = !movingRight;
+          
+          // Allow next animation after transition completes
+          setTimeout(() => {
+            isAnimating = false;
+          }, 2000);
+        }, 50);
+      }
+      
+      // Initialize slides
+      initializeSlides();
+      
+      // Change slide every 1 second
+      setInterval(nextSlide, 1000);
+    }
+
+    // Initialize hero slider when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      initHeroSlider();
+    });
+    
+    // Performance monitoring (safe addition)
+    if ('performance' in window) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          if (perfData) {
+            console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart, 'ms');
+          }
+        }, 0);
+      });
+    }
+
+    // Weekly Challenge Modal Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      var challengeBtn = document.getElementById('weekly-challenge-btn');
+      var challengeModal = document.getElementById('challenge-modal');
+      var closeChallengeModal = document.getElementById('close-challenge-modal');
+      if (challengeBtn && challengeModal && closeChallengeModal) {
+        challengeBtn.addEventListener('click', function() {
+          challengeModal.classList.remove('hidden');
+          // --- Spin Wheel Initialization on Modal Open ---
+          setTimeout(function() {
+            const canvas = document.getElementById('svg-spin-wheel');
+            if (canvas) {
+              drawSVGWheel(null, 0);
+            }
+            const spinBtn = document.getElementById('spin-btn');
+            if (spinBtn) {
+              spinBtn.disabled = false;
+              spinBtn.textContent = 'Spin';
+              spinBtn.onclick = function() {
+                document.getElementById('weekly-challenge-win-discount').classList.add('hidden');
+                document.getElementById('weekly-challenge-win-note').classList.add('hidden');
+                spinBtn.disabled = true;
+                spinBtn.textContent = 'Spinning...';
+                spinSVGWheel();
+              };
+            }
+          }, 50);
+        });
+        closeChallengeModal.addEventListener('click', function() {
+          challengeModal.classList.add('hidden');
+        });
+        // Optional: close modal when clicking outside the modal content
+        challengeModal.addEventListener('click', function(e) {
+          if (e.target === challengeModal) {
+            challengeModal.classList.add('hidden');
+          }
+        });
+      }
+    });
+
+    // New SVG Spin Wheel Implementation
+    const svgWheelOptions = [5, 10, 12, 15, 18, 20];
+    const svgWheelColors = ["#f4d03f", "#d4af37", "#ccac85", "#b4b897", "#889776", "#705d3f"];
+    let svgSpinning = false;
+
+    function drawSVGWheel(selectedIdx = null, angleOffset = 0) {
+      const svg = document.getElementById('svg-spin-wheel');
+      if (!svg) return;
+      svg.innerHTML = '';
+      const num = svgWheelOptions.length;
+      const cx = 110, cy = 110, r = 100;
+      for (let i = 0; i < num; i++) {
+        const startAngle = (i * 2 * Math.PI / num) + angleOffset;
+        const endAngle = ((i + 1) * 2 * Math.PI / num) + angleOffset;
+        const x1 = cx + r * Math.cos(startAngle);
+        const y1 = cy + r * Math.sin(startAngle);
+        const x2 = cx + r * Math.cos(endAngle);
+        const y2 = cy + r * Math.sin(endAngle);
+        const largeArc = endAngle - startAngle > Math.PI ? 1 : 0;
+        const pathData = [
+          `M ${cx} ${cy}`,
+          `L ${x1} ${y1}`,
+          `A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2}`,
+          'Z'
+        ].join(' ');
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', pathData);
+        path.setAttribute('fill', svgWheelColors[i % svgWheelColors.length]);
+        path.setAttribute('stroke', '#fff');
+        path.setAttribute('stroke-width', '2');
+        if (selectedIdx === i) path.setAttribute('opacity', '0.7');
+        svg.appendChild(path);
+        // Add text label
+        const labelAngle = startAngle + (endAngle - startAngle) / 2;
+        const lx = cx + (r - 30) * Math.cos(labelAngle);
+        const ly = cy + (r - 30) * Math.sin(labelAngle) + 7;
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', lx);
+        text.setAttribute('y', ly);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('font-size', '22');
+        text.setAttribute('font-family', 'Montserrat, sans-serif');
+        text.setAttribute('fill', '#333');
+        text.setAttribute('font-weight', 'bold');
+        text.textContent = svgWheelOptions[i] + '%';
+        svg.appendChild(text);
+      }
+      // Draw center hub
+      const hub = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      hub.setAttribute('cx', cx);
+      hub.setAttribute('cy', cy);
+      hub.setAttribute('r', 28);
+      hub.setAttribute('fill', '#fff');
+      hub.setAttribute('stroke', '#e74c3c');
+      hub.setAttribute('stroke-width', '4');
+      svg.appendChild(hub);
+      const hub2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      hub2.setAttribute('cx', cx);
+      hub2.setAttribute('cy', cy);
+      hub2.setAttribute('r', 16);
+      hub2.setAttribute('fill', '#e74c3c');
+      svg.appendChild(hub2);
+    }
+
+    let hasSpun = false;
+
+    function spinSVGWheel() {
+      if (svgSpinning || hasSpun) return;
+      svgSpinning = true;
+      hasSpun = true;
+      const spinBtn = document.getElementById('spin-btn');
+      spinBtn.disabled = true;
+      spinBtn.textContent = 'Spinning...';
+      document.getElementById('weekly-challenge-win-discount').classList.add('hidden');
+      document.getElementById('weekly-challenge-win-note').classList.add('hidden');
+      // Pick a random winner
+      const winner = Math.floor(Math.random() * svgWheelOptions.length);
+      const num = svgWheelOptions.length;
+      const sectorAngle = 360 / num;
+      const spins = 5 + Math.floor(Math.random() * 2); // 5 or 6 full spins
+      // The pointer is at 0deg (top). To land the winner at the pointer, rotate so the center of the winner sector is at 0deg.
+      const winnerOffset = 270 - (winner * sectorAngle + sectorAngle / 2); // 270deg is top in SVG
+      const finalAngle = 360 * spins + winnerOffset;
+      const duration = 2200; // ms
+      const start = performance.now();
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+      function animate(now) {
+        const elapsed = now - start;
+        const t = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(t);
+        const currentAngle = finalAngle * eased;
+        drawSVGWheel(null, (currentAngle * Math.PI / 180));
+        if (t < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          svgSpinning = false;
+          drawSVGWheel(winner, (finalAngle * Math.PI / 180));
+          document.getElementById('weekly-challenge-win-discount').textContent = `Discount ${svgWheelOptions[winner]}%`;
+          document.getElementById('weekly-challenge-win-discount').classList.remove('hidden');
+          document.getElementById('weekly-challenge-win-note').classList.remove('hidden');
+          spinBtn.disabled = true;
+          spinBtn.textContent = 'Already Spun';
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    // Always initialize SVG wheel and button on modal open
+    function setupSVGWheel() {
+      drawSVGWheel();
+      const spinBtn = document.getElementById('spin-btn');
+      if (spinBtn) {
+        if (hasSpun) {
+          spinBtn.disabled = true;
+          spinBtn.textContent = 'Already Spun';
+        } else {
+          spinBtn.disabled = false;
+          spinBtn.textContent = 'Spin';
+          spinBtn.onclick = spinSVGWheel;
+        }
+      }
+      document.getElementById('weekly-challenge-win-discount').classList.add('hidden');
+      document.getElementById('weekly-challenge-win-note').classList.add('hidden');
+    }
+
+    // Attach to modal open
+    var challengeBtn = document.getElementById('weekly-challenge-btn');
+    var challengeModal = document.getElementById('challenge-modal');
+    if (challengeBtn && challengeModal) {
+      challengeBtn.addEventListener('click', function() {
+        challengeModal.classList.remove('hidden');
+        setTimeout(setupSVGWheel, 50);
+      });
+    }
+  </script>
+</body>
+</html>
